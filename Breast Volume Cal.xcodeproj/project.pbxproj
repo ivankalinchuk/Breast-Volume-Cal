@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8067B092203689D5007E48F4 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8067B091203689D5007E48F4 /* FrontViewController.swift */; };
+		8067B0942036CC9B007E48F4 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8067B0932036CC9B007E48F4 /* Point.swift */; };
+		809257C12035CC070034B3EA /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809257C02035CC070034B3EA /* SideViewController.swift */; };
+		80C6EFD220357DAA009286A2 /* pubg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80C6EFD120357DAA009286A2 /* pubg.jpg */; };
+		80DF95232033415900588DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DF95222033415900588DE5 /* AppDelegate.swift */; };
+		80DF95252033415900588DE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DF95242033415900588DE5 /* ViewController.swift */; };
+		80DF95282033415900588DE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80DF95262033415900588DE5 /* Main.storyboard */; };
+		80DF952A2033415900588DE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80DF95292033415900588DE5 /* Assets.xcassets */; };
+		80DF952D2033415900588DE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80DF952B2033415900588DE5 /* LaunchScreen.storyboard */; };
+		80DF95382033415900588DE5 /* Breast_Volume_CalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DF95372033415900588DE5 /* Breast_Volume_CalTests.swift */; };
+		80DF95432033415900588DE5 /* Breast_Volume_CalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DF95422033415900588DE5 /* Breast_Volume_CalUITests.swift */; };
+		80EF373E205BB86300E9CED9 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF373D205BB86300E9CED9 /* ResultController.swift */; };
+		80EF3740205BC10000E9CED9 /* calculationUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF373F205BC10000E9CED9 /* calculationUnit.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80DF95342033415900588DE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80DF95172033415900588DE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80DF951E2033415900588DE5;
+			remoteInfo = "Breast Volume Cal";
+		};
+		80DF953F2033415900588DE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80DF95172033415900588DE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80DF951E2033415900588DE5;
+			remoteInfo = "Breast Volume Cal";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8067B091203689D5007E48F4 /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
+		8067B0932036CC9B007E48F4 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		809257C02035CC070034B3EA /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
+		80C6EFD120357DAA009286A2 /* pubg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pubg.jpg; path = ../../../../Desktop/pubg.jpg; sourceTree = "<group>"; };
+		80DF951F2033415900588DE5 /* Breast Volume Cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breast Volume Cal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80DF95222033415900588DE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		80DF95242033415900588DE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80DF95272033415900588DE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80DF95292033415900588DE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80DF952C2033415900588DE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		80DF952E2033415900588DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80DF95332033415900588DE5 /* Breast Volume CalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Breast Volume CalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80DF95372033415900588DE5 /* Breast_Volume_CalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breast_Volume_CalTests.swift; sourceTree = "<group>"; };
+		80DF95392033415900588DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80DF953E2033415900588DE5 /* Breast Volume CalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Breast Volume CalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80DF95422033415900588DE5 /* Breast_Volume_CalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breast_Volume_CalUITests.swift; sourceTree = "<group>"; };
+		80DF95442033415900588DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80EF373D205BB86300E9CED9 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
+		80EF373F205BC10000E9CED9 /* calculationUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculationUnit.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80DF951C2033415900588DE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80DF95302033415900588DE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80DF953B2033415900588DE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80DF95162033415900588DE5 = {
+			isa = PBXGroup;
+			children = (
+				80DF95212033415900588DE5 /* Breast Volume Cal */,
+				80DF95362033415900588DE5 /* Breast Volume CalTests */,
+				80DF95412033415900588DE5 /* Breast Volume CalUITests */,
+				80DF95202033415900588DE5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80DF95202033415900588DE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80DF951F2033415900588DE5 /* Breast Volume Cal.app */,
+				80DF95332033415900588DE5 /* Breast Volume CalTests.xctest */,
+				80DF953E2033415900588DE5 /* Breast Volume CalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80DF95212033415900588DE5 /* Breast Volume Cal */ = {
+			isa = PBXGroup;
+			children = (
+				80DF95222033415900588DE5 /* AppDelegate.swift */,
+				80DF95242033415900588DE5 /* ViewController.swift */,
+				80DF95262033415900588DE5 /* Main.storyboard */,
+				8067B0932036CC9B007E48F4 /* Point.swift */,
+				809257C02035CC070034B3EA /* SideViewController.swift */,
+				8067B091203689D5007E48F4 /* FrontViewController.swift */,
+				80EF373F205BC10000E9CED9 /* calculationUnit.swift */,
+				80C6EFD120357DAA009286A2 /* pubg.jpg */,
+				80DF95292033415900588DE5 /* Assets.xcassets */,
+				80DF952B2033415900588DE5 /* LaunchScreen.storyboard */,
+				80DF952E2033415900588DE5 /* Info.plist */,
+				80EF373D205BB86300E9CED9 /* ResultController.swift */,
+			);
+			path = "Breast Volume Cal";
+			sourceTree = "<group>";
+		};
+		80DF95362033415900588DE5 /* Breast Volume CalTests */ = {
+			isa = PBXGroup;
+			children = (
+				80DF95372033415900588DE5 /* Breast_Volume_CalTests.swift */,
+				80DF95392033415900588DE5 /* Info.plist */,
+			);
+			path = "Breast Volume CalTests";
+			sourceTree = "<group>";
+		};
+		80DF95412033415900588DE5 /* Breast Volume CalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				80DF95422033415900588DE5 /* Breast_Volume_CalUITests.swift */,
+				80DF95442033415900588DE5 /* Info.plist */,
+			);
+			path = "Breast Volume CalUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80DF951E2033415900588DE5 /* Breast Volume Cal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80DF95472033415900588DE5 /* Build configuration list for PBXNativeTarget "Breast Volume Cal" */;
+			buildPhases = (
+				80DF951B2033415900588DE5 /* Sources */,
+				80DF951C2033415900588DE5 /* Frameworks */,
+				80DF951D2033415900588DE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Breast Volume Cal";
+			productName = "Breast Volume Cal";
+			productReference = 80DF951F2033415900588DE5 /* Breast Volume Cal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80DF95322033415900588DE5 /* Breast Volume CalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80DF954A2033415900588DE5 /* Build configuration list for PBXNativeTarget "Breast Volume CalTests" */;
+			buildPhases = (
+				80DF952F2033415900588DE5 /* Sources */,
+				80DF95302033415900588DE5 /* Frameworks */,
+				80DF95312033415900588DE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80DF95352033415900588DE5 /* PBXTargetDependency */,
+			);
+			name = "Breast Volume CalTests";
+			productName = "Breast Volume CalTests";
+			productReference = 80DF95332033415900588DE5 /* Breast Volume CalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		80DF953D2033415900588DE5 /* Breast Volume CalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80DF954D2033415900588DE5 /* Build configuration list for PBXNativeTarget "Breast Volume CalUITests" */;
+			buildPhases = (
+				80DF953A2033415900588DE5 /* Sources */,
+				80DF953B2033415900588DE5 /* Frameworks */,
+				80DF953C2033415900588DE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80DF95402033415900588DE5 /* PBXTargetDependency */,
+			);
+			name = "Breast Volume CalUITests";
+			productName = "Breast Volume CalUITests";
+			productReference = 80DF953E2033415900588DE5 /* Breast Volume CalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80DF95172033415900588DE5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = LotteryKitchen;
+				TargetAttributes = {
+					80DF951E2033415900588DE5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					80DF95322033415900588DE5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 80DF951E2033415900588DE5;
+					};
+					80DF953D2033415900588DE5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 80DF951E2033415900588DE5;
+					};
+				};
+			};
+			buildConfigurationList = 80DF951A2033415900588DE5 /* Build configuration list for PBXProject "Breast Volume Cal" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80DF95162033415900588DE5;
+			productRefGroup = 80DF95202033415900588DE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80DF951E2033415900588DE5 /* Breast Volume Cal */,
+				80DF95322033415900588DE5 /* Breast Volume CalTests */,
+				80DF953D2033415900588DE5 /* Breast Volume CalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80DF951D2033415900588DE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80DF952D2033415900588DE5 /* LaunchScreen.storyboard in Resources */,
+				80C6EFD220357DAA009286A2 /* pubg.jpg in Resources */,
+				80DF952A2033415900588DE5 /* Assets.xcassets in Resources */,
+				80DF95282033415900588DE5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80DF95312033415900588DE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80DF953C2033415900588DE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80DF951B2033415900588DE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8067B092203689D5007E48F4 /* FrontViewController.swift in Sources */,
+				8067B0942036CC9B007E48F4 /* Point.swift in Sources */,
+				80EF373E205BB86300E9CED9 /* ResultController.swift in Sources */,
+				80DF95252033415900588DE5 /* ViewController.swift in Sources */,
+				809257C12035CC070034B3EA /* SideViewController.swift in Sources */,
+				80EF3740205BC10000E9CED9 /* calculationUnit.swift in Sources */,
+				80DF95232033415900588DE5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80DF952F2033415900588DE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80DF95382033415900588DE5 /* Breast_Volume_CalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80DF953A2033415900588DE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80DF95432033415900588DE5 /* Breast_Volume_CalUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80DF95352033415900588DE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80DF951E2033415900588DE5 /* Breast Volume Cal */;
+			targetProxy = 80DF95342033415900588DE5 /* PBXContainerItemProxy */;
+		};
+		80DF95402033415900588DE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80DF951E2033415900588DE5 /* Breast Volume Cal */;
+			targetProxy = 80DF953F2033415900588DE5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		80DF95262033415900588DE5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80DF95272033415900588DE5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		80DF952B2033415900588DE5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80DF952C2033415900588DE5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80DF95452033415900588DE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80DF95462033415900588DE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80DF95482033415900588DE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4Z7X4SXN9;
+				INFOPLIST_FILE = "Breast Volume Cal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Senior-Project.Breast-Volume-Cal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		80DF95492033415900588DE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4Z7X4SXN9;
+				INFOPLIST_FILE = "Breast Volume Cal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Senior-Project.Breast-Volume-Cal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		80DF954B2033415900588DE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4Z7X4SXN9;
+				INFOPLIST_FILE = "Breast Volume CalTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Senior-Project.Breast-Volume-CalTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Breast Volume Cal.app/Breast Volume Cal";
+			};
+			name = Debug;
+		};
+		80DF954C2033415900588DE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4Z7X4SXN9;
+				INFOPLIST_FILE = "Breast Volume CalTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Senior-Project.Breast-Volume-CalTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Breast Volume Cal.app/Breast Volume Cal";
+			};
+			name = Release;
+		};
+		80DF954E2033415900588DE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4Z7X4SXN9;
+				INFOPLIST_FILE = "Breast Volume CalUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Senior-Project.Breast-Volume-CalUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Breast Volume Cal";
+			};
+			name = Debug;
+		};
+		80DF954F2033415900588DE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4Z7X4SXN9;
+				INFOPLIST_FILE = "Breast Volume CalUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Senior-Project.Breast-Volume-CalUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Breast Volume Cal";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80DF951A2033415900588DE5 /* Build configuration list for PBXProject "Breast Volume Cal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80DF95452033415900588DE5 /* Debug */,
+				80DF95462033415900588DE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80DF95472033415900588DE5 /* Build configuration list for PBXNativeTarget "Breast Volume Cal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80DF95482033415900588DE5 /* Debug */,
+				80DF95492033415900588DE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80DF954A2033415900588DE5 /* Build configuration list for PBXNativeTarget "Breast Volume CalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80DF954B2033415900588DE5 /* Debug */,
+				80DF954C2033415900588DE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80DF954D2033415900588DE5 /* Build configuration list for PBXNativeTarget "Breast Volume CalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80DF954E2033415900588DE5 /* Debug */,
+				80DF954F2033415900588DE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80DF95172033415900588DE5 /* Project object */;
+}
