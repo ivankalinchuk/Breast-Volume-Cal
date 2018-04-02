@@ -13,7 +13,7 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func Calculate(_ sender: UIButton) {
-        let f = CalculationUnit();
+        let calculator = CalculationUnit();
         
         
         //Geometric Method Calaulation
@@ -22,17 +22,27 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         geometric = eclipse + cone;
         
         //Breast-V Method Calculation
+        sternalNotch = points[8].center
+        nippleFront = points[9].center
+        calculator.calculateSN(sternalNotch: sternalNotch, nippleFront: nippleFront)
+        calculator.calBreastV()
     }
     
     @IBOutlet weak var pictureView: UIImageView!
     var lastPoint = CGPoint.zero
     var swiped = false
-    var numberOfPoint = 8
+    var numberOfPoint = 10
     var lineWidth = 5
     var dotWidth = 10
-    var points = [Point]()
     var touchedIndex = 0
-    let recognizer = UITapGestureRecognizer()
+    var points = [UIImageView]()
+    var labels = [UILabel]()
+    var lineColor = UIColor.black
+    let initialRect = CGRect(x: 0, y: 0, width: 20, height: 20)
+    var panGestureRecognizer = UIPanGestureRecognizer()
+    var timer = 0
+    var sternalNotch = CGPoint()
+    var nippleFront = CGPoint()
     
     @IBAction func camera(_ sender: Any) {
         let image = UIImagePickerController()
@@ -66,8 +76,10 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
+        setTimer()
         setPoint()
-        drawFrame()
+        setLabel()
         // Do any additional setup after loading the view.
     }
 
@@ -76,129 +88,92 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         // Dispose of any resources that can be recreated.
     }
     
+    func setTimer(){
+        let displayLink = CADisplayLink(target: self, selector: #selector(update))
+        displayLink.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+        displayLink.preferredFramesPerSecond = 30
+    }
+    
+    func setLabel(){
+        for _ in 0..<numberOfPoint{
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+            label.center = CGPoint(x: 0, y:0)
+            label.textAlignment = NSTextAlignment.center
+            label.text = ""
+            labels.append(label)
+            self.view.addSubview(label)
+        }
+        labels[8].text = "Sternal Notch"
+        labels[9].text = "Nipple"
+    }
+    
     func setPoint(){
         for _ in 0..<numberOfPoint{
-            points.append(Point())
-            
+            let dotView = UIImageView(frame: initialRect)
+            var panGestureRecognizer = UIPanGestureRecognizer()
+            panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
+            dotView.backgroundColor  = lineColor
+            dotView.layer.cornerRadius = 10
+            dotView.clipsToBounds = true
+            dotView.addGestureRecognizer(panGestureRecognizer)
+            dotView.isUserInteractionEnabled = true
+            self.view.addSubview(dotView)
+            points.append(dotView)
         }
-        points[0].location = CGPoint(x:(3/8)*imageView.frame.maxX, y:(1/4)*imageView.frame.maxY)
-        points[1].location = CGPoint(x:(1/4)*imageView.frame.maxX, y:(7/16)*imageView.frame.maxY)
-        points[2].location = CGPoint(x:(1/4)*imageView.frame.maxX, y:(9/16)*imageView.frame.maxY)
-        points[3].location = CGPoint(x:(3/8)*imageView.frame.maxX, y:(3/4)*imageView.frame.maxY)
-        points[4].location = CGPoint(x:(5/8)*imageView.frame.maxX, y:(3/4)*imageView.frame.maxY)
-        points[5].location = CGPoint(x:(3/4)*imageView.frame.maxX, y:(9/16)*imageView.frame.maxY)
-        points[6].location = CGPoint(x:(3/4)*imageView.frame.maxX, y:(7/16)*imageView.frame.maxY)
-        points[7].location = CGPoint(x:(5/8)*imageView.frame.maxX, y:(1/4)*imageView.frame.maxY)
-        
-        for index in 0..<numberOfPoint{
-            print("\(index) x: \(points[index].location.x)")
-            print("\(index) y: \(points[index].location.y)")
-        }
+        points[0].center = CGPoint(x:(3/8)*imageView.frame.maxX, y:(1/4)*imageView.frame.maxY)
+        points[1].center = CGPoint(x:(1/4)*imageView.frame.maxX, y:(7/16)*imageView.frame.maxY)
+        points[2].center = CGPoint(x:(1/4)*imageView.frame.maxX, y:(9/16)*imageView.frame.maxY)
+        points[3].center = CGPoint(x:(3/8)*imageView.frame.maxX, y:(3/4)*imageView.frame.maxY)
+        points[4].center = CGPoint(x:(5/8)*imageView.frame.maxX, y:(3/4)*imageView.frame.maxY)
+        points[5].center = CGPoint(x:(3/4)*imageView.frame.maxX, y:(9/16)*imageView.frame.maxY)
+        points[6].center = CGPoint(x:(3/4)*imageView.frame.maxX, y:(7/16)*imageView.frame.maxY)
+        points[7].center = CGPoint(x:(5/8)*imageView.frame.maxX, y:(1/4)*imageView.frame.maxY)
+        points[8].center = CGPoint(x:(1/2)*imageView.frame.maxX, y:(1/8)*imageView.frame.maxY)
+        points[9].center = CGPoint(x:(1/3)*imageView.frame.maxX, y:(1/2)*imageView.frame.maxY)
     }
     
-    func drawFrame(){
+    @objc func update(){
         self.imageView.image = nil
-        drawPointsAndLine(fromPoint:points[0].location, toPoint:points[1].location )
-        drawPointsAndLine(fromPoint:points[1].location, toPoint:points[2].location )
-        drawPointsAndLine(fromPoint:points[2].location, toPoint:points[3].location )
-        drawPointsAndLine(fromPoint:points[3].location, toPoint:points[4].location )
-        drawPointsAndLine(fromPoint:points[4].location, toPoint:points[5].location )
-        drawPointsAndLine(fromPoint:points[5].location, toPoint:points[6].location )
-        drawPointsAndLine(fromPoint:points[6].location, toPoint:points[7].location )
-        drawLines(fromPoint: points[7].location, toPoint: points[7].location, width: dotWidth )
-        
-    }
-    
-    func drawPointsAndLine(fromPoint:CGPoint, toPoint:CGPoint){
-        drawLines(fromPoint: fromPoint, toPoint: fromPoint, width: dotWidth )
-        drawLines(fromPoint: fromPoint, toPoint: toPoint, width: lineWidth )
+        for index in 0..<numberOfPoint-2{
+            drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
+        }
+        labels[8].center.x = points[8].center.x
+        labels[8].center.y = points[8].center.y+20
+        labels[9].center.x = points[9].center.x
+        labels[9].center.y = points[9].center.y+20
     }
     
     
-    func drawLines(fromPoint:CGPoint, toPoint:CGPoint, width: Int){
+    func drawLines(fromPoint:CGPoint, toPoint:CGPoint){
         UIGraphicsBeginImageContext(self.view.frame.size)
-        imageView.image?.draw(in: CGRect(x: self.view.frame.minX, y: self.view.frame.minY, width: self.view.frame.size.width, height: self.view.frame.size.height))
+        imageView.image?.draw(in: self.view.frame)
         let context = UIGraphicsGetCurrentContext()
         context?.move(to: fromPoint)
         context?.addLine(to: toPoint)
         
         context?.setBlendMode(CGBlendMode.normal)
         context?.setLineCap(CGLineCap.round)
-        context?.setLineWidth(CGFloat(width))
-        //context?.setStrokeColor(UIColor(Red:0, green:0, blue:0, alpha: 1).cgColor)
+        context?.setLineWidth(CGFloat(lineWidth))
+        context?.setStrokeColor(lineColor.cgColor)
         
         context?.strokePath()
         imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touch began")
-        swiped = false
-        if let touch = touches.first{
-            lastPoint = touch.location(in: imageView)
-            print("last point x: \(lastPoint.x)")
-            print("last point y: \(lastPoint.y)")
-            lastPoint.x += 71
-            lastPoint.y += 130
-        }
-        
-        var leastDifference:CGFloat = 999999.99
-        for index in 0..<numberOfPoint{
-            let difference = points[index].checkTouch(position: lastPoint)
-            if difference < leastDifference{
-                touchedIndex = index
-                leastDifference = difference
-            }
-        }
-        if leastDifference < 10000 {
-            points[touchedIndex].isTouched = true
-            print("touched index = \(touchedIndex)")
+    
+    @objc func pan(_ recognizer: UIPanGestureRecognizer){
+        guard let view = recognizer.view else { return }
+        switch recognizer.state {
+        case .began: fallthrough
+        case .changed:
+            let translation = recognizer.translation(in: self.view)
+            view.center = CGPoint(x:view.center.x + translation.x, y: view.center.y + translation.y)
+            recognizer.setTranslation(CGPoint.zero, in: self.view)
+            update()
+        case.ended: break
+        default: break
         }
     }
-    
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        swiped = true
-        
-        if let touch = touches.first{
-            let currentPoint = touch.location(in: imageView)
-            lastPoint = currentPoint
-            lastPoint.x += 71
-            lastPoint.y += 130
-        }
-        
-        if points[touchedIndex].isTouched{
-            points[touchedIndex].location = lastPoint
-        }
-        
-        
-        drawFrame()
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touch end")
-        if let touch = touches.first{
-            let currentPoint = touch.location(in: imageView)
-            lastPoint = currentPoint
-            lastPoint.x += 71
-            lastPoint.y += 130
-        }
-        for index in 0..<numberOfPoint{
-            points[index].isTouched = false
-        }
-    }
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

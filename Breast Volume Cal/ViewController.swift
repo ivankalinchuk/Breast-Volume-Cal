@@ -11,10 +11,10 @@ import AVFoundation
 
 // Global Variable Declaration
     //for breast V method
-var breastV = 0;
-var sn = 0;
-var ff = 0;
-var fn = 0;
+var breastV = 0.0;
+var sn = 0.0;
+var ff = 0.0;
+var fn = 0.0;
 
     //for geometric method
 var geometric = 0.0;

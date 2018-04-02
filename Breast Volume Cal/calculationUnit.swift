@@ -40,4 +40,31 @@ class CalculationUnit{
         eclipseB = dis(a: left, b: right);
         eclipseC = dis(a: midCurve, b: midPoint(start: startCurve, end: endCurve));
     }
+    
+    //Calculate arc distant from fold to nipple
+    func calculateFN(startCurve : CGPoint, curveLeft : CGPoint, midCurve : CGPoint, curveRight : CGPoint, nipple :CGPoint){
+        fn = 0.0
+        fn += dis(a : startCurve,b : curveLeft)
+        fn += dis(a : curveLeft,b : midCurve)
+        fn += dis(a : midCurve,b : curveRight)
+        fn += dis(a : curveRight,b : nipple)
+    }
+    
+    //Calculate arc distant from fold to fold
+    func calculateFF(startCurve : CGPoint, curveLeft : CGPoint, midCurve : CGPoint, curveRight : CGPoint, endCurve :CGPoint){
+        ff = 0.0
+        ff += dis(a : startCurve,b : curveLeft)
+        ff += dis(a : curveLeft,b : midCurve)
+        ff += dis(a : midCurve,b : curveRight)
+        ff += dis(a : curveRight,b : endCurve)
+    }
+    
+    func calculateSN(sternalNotch :CGPoint, nippleFront :CGPoint){
+        sn = dis(a : sternalNotch, b : nippleFront)
+    }
+    
+    //Calculate breast volume according to breastV method
+    func calBreastV(){
+        breastV =  -231.66 + 0.5747*sn*sn + 18.5478*ff + 14.5087*fn
+    }
 }

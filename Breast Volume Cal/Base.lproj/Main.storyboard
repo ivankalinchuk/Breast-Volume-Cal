@@ -26,7 +26,7 @@
                                     <segue destination="sAL-13-u69" kind="show" id="RzP-ri-5L0"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pubg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lZK-EO-wZj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="temp.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lZK-EO-wZj">
                                 <rect key="frame" x="0.0" y="222" width="768" height="459"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -107,7 +107,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SzH-vZ-FDr">
-                                <rect key="frame" x="71" y="130" width="627" height="565"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -228,7 +228,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LaS-6f-DDM">
-                                <rect key="frame" x="71" y="130" width="627" height="565"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -261,7 +261,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pubg.jpg" width="1440" height="900"/>
+        <image name="temp.jpg" width="600" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GwH-Br-vQK"/>
