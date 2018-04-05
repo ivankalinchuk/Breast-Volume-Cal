@@ -26,7 +26,7 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
    
     var lastPoint = CGPoint.zero
     var swiped = false
-    var numberOfPoint = 8
+    var numberOfPoint = 7
     var lineWidth = 5
     var dotWidth = 10
     var touchedIndex = 0
@@ -91,6 +91,13 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
             labels.append(label)
             self.view.addSubview(label)
         }
+        labels[0].text = "TopSide"
+        labels[1].text = "StartCurve"
+        labels[2].text = "CurveLeft"
+        labels[3].text = "MidCurve"
+        labels[4].text = "CurveRight"
+        labels[5].text = "EndCurve"
+        labels[6].text = "Nipple"
     }
     
     func setPoint(){
@@ -106,20 +113,31 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
             self.view.addSubview(dotView)
             points.append(dotView)
         }
-        points[0].center = CGPoint(x:(3/8)*imageView.frame.maxX, y:(1/4)*imageView.frame.maxY)
+        /*points[0].center = CGPoint(x:(3/8)*imageView.frame.maxX, y:(1/4)*imageView.frame.maxY)
         points[1].center = CGPoint(x:(1/4)*imageView.frame.maxX, y:(7/16)*imageView.frame.maxY)
         points[2].center = CGPoint(x:(1/4)*imageView.frame.maxX, y:(9/16)*imageView.frame.maxY)
         points[3].center = CGPoint(x:(3/8)*imageView.frame.maxX, y:(3/4)*imageView.frame.maxY)
         points[4].center = CGPoint(x:(5/8)*imageView.frame.maxX, y:(3/4)*imageView.frame.maxY)
         points[5].center = CGPoint(x:(3/4)*imageView.frame.maxX, y:(9/16)*imageView.frame.maxY)
-        points[6].center = CGPoint(x:(3/4)*imageView.frame.maxX, y:(7/16)*imageView.frame.maxY)
-        points[7].center = CGPoint(x:(5/8)*imageView.frame.maxX, y:(1/4)*imageView.frame.maxY)
+        points[6].center = CGPoint(x:(3/4)*imageView.frame.maxX, y:(7/16)*imageView.frame.maxY)*/
+        points[0].center = CGPoint(x:195.5, y:241.5)
+        points[1].center = CGPoint(x:194.0, y:514.0)
+        points[2].center = CGPoint(x:233.0, y:596.5)
+        points[3].center = CGPoint(x:323.5, y:638.5)
+        points[4].center = CGPoint(x:435.0, y:595.0)
+        points[5].center = CGPoint(x:452.0, y:515.0)
+        points[6].center = CGPoint(x:454.0, y:451.5)
     }
     
     @objc func update(){
         self.imageView.image = nil
-        for index in 0..<numberOfPoint-1{
+        for index in 0..<numberOfPoint-2{
             drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
+        }
+        for index in 0..<numberOfPoint{
+            labels[index].center.x = points[index].center.x
+            labels[index].center.y = points[index].center.y+20
+            print(labels[index].text!,points[index].center.x,points[index].center.y,separator: "  ")
         }
     }
     
