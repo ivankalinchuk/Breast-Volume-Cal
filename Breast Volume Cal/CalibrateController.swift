@@ -35,7 +35,7 @@ UINavigationControllerDelegate{
             let alert = UIAlertController(title: "Calibrating Success", message: "Press 'Next' to go to next steps.", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            //calibrating
+           
             //let calibratingLength = calculator.dis(a: <#T##CGPoint#>, b: <#T##CGPoint#>)
             //scaler = 1/calibratingLength
             
