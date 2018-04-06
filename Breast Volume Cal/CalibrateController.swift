@@ -8,15 +8,16 @@
 
 import Foundation
 import UIKit
-class CalibrateController: UIViewController,
-    UIImagePickerControllerDelegate,
-UINavigationControllerDelegate{
+@objc class CalibrateController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+/*
     let calculator = CalculationUnit();
+<<<<<<< HEAD
     var readyToCalibrate = false;
     var numberOfPoint = 2;
     var points = [UIImageView]()
@@ -34,6 +35,12 @@ UINavigationControllerDelegate{
             setPoint()
         }
         photoReady = true
+=======
+    var isReady = false;
+    
+    @IBOutlet weak var pictureView: UIImageView!
+    @IBAction func cameraRoll(_ sender: Any) {
+>>>>>>> 2eec204dde6d8871b380065bc95458ddcd29ddf5
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -41,9 +48,22 @@ UINavigationControllerDelegate{
         image.allowsEditing = false
         self.present(image , animated: true)
         
-        readyToCalibrate = true;
+        isReady = true;
     }
     
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            pictureView.image = image
+        }
+        else
+        {
+            //error
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+<<<<<<< HEAD
     override func viewDidLoad() {
         super.viewDidLoad()
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
@@ -116,19 +136,29 @@ UINavigationControllerDelegate{
     
     @IBAction func calibrating(_ sender: UIButton) {
         if(readyToCalibrate){
+=======
+    
+    @IBAction func calibrate(_ sender: Any) {
+        if(isReady){
+>>>>>>> 2eec204dde6d8871b380065bc95458ddcd29ddf5
             // create alert
             let alert = UIAlertController(title: "Calibrating Success", message: "Press 'Next' to go to next steps.", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+<<<<<<< HEAD
             //calibrating
             let calibratingLength = calculator.dis(a: points[0].center, b: points[1].center)
             scaler = 1/calibratingLength
+=======
+            
+            
+>>>>>>> 2eec204dde6d8871b380065bc95458ddcd29ddf5
             
             // alert show
             self.present(alert, animated: true)
-        
+            
         }
-        
+            
         else{
             let alert = UIAlertController(title: "Cannot Calibrate!", message: "Please take a photo and try again.", preferredStyle: .alert)
             
@@ -139,4 +169,5 @@ UINavigationControllerDelegate{
     }
     
 }
-
+*/
+}
