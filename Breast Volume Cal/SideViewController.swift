@@ -76,6 +76,13 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func next(_ sender: UIButton) {
+        let calculator = CalculationUnit();
+        
+        calculator.calculateFF(startCurve: points[1].center, curveLeft: points[2].center, midCurve: points[3].center, curveRight: points[4].center, endCurve: points[5].center)
+        calculator.calculateFN(startCurve: points[1].center, curveLeft: points[2].center, midCurve: points[3].center, curveRight: points[4].center, nipple: points[6].center)
+    }
+    
     func setTimer(){
         let displayLink = CADisplayLink(target: self, selector: #selector(update))
         displayLink.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
@@ -137,7 +144,7 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         for index in 0..<numberOfPoint{
             labels[index].center.x = points[index].center.x
             labels[index].center.y = points[index].center.y+20
-            print(labels[index].text!,points[index].center.x,points[index].center.y,separator: "  ")
+            //print(labels[index].text!,points[index].center.x,points[index].center.y,separator: "  ")
         }
     }
     
