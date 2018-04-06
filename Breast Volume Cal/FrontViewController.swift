@@ -43,8 +43,13 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     var timer = 0
     var sternalNotch = CGPoint()
     var nippleFront = CGPoint()
+    var photoReady = false
     
     @IBAction func camera(_ sender: Any) {
+        if(!photoReady){
+            setPoint()
+        }
+        photoReady = true
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -54,6 +59,10 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     }
     
     @IBAction func library(_ sender: Any) {
+        if(!photoReady){
+            setPoint()
+        }
+        photoReady = true
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -78,7 +87,6 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         super.viewDidLoad()
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
         setTimer()
-        setPoint()
         setLabel()
         // Do any additional setup after loading the view.
     }
@@ -133,6 +141,9 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     }
     
     @objc func update(){
+        if (!photoReady){
+            return
+        }
         self.imageView.image = nil
         for index in 0..<numberOfPoint-2{
             drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)

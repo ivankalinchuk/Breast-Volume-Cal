@@ -14,7 +14,6 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         super.viewDidLoad()
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
         setTimer()
-        setPoint()
         setLabel()
         // Do any additional setup after loading the view.
     }
@@ -41,8 +40,13 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
     var curveLeft = CGPoint()
     var midCurve = CGPoint()
     var labels = [UILabel]()
+    var photoReady = false
     
     @IBAction func camera(_ sender: Any) {
+        if(!photoReady){
+            setPoint()
+        }
+        photoReady = true
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -52,6 +56,10 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
     }
     
     @IBAction func library(_ sender: Any) {
+        if(!photoReady){
+            setPoint()
+        }
+        photoReady = true
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -120,13 +128,6 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
             self.view.addSubview(dotView)
             points.append(dotView)
         }
-        /*points[0].center = CGPoint(x:(3/8)*imageView.frame.maxX, y:(1/4)*imageView.frame.maxY)
-        points[1].center = CGPoint(x:(1/4)*imageView.frame.maxX, y:(7/16)*imageView.frame.maxY)
-        points[2].center = CGPoint(x:(1/4)*imageView.frame.maxX, y:(9/16)*imageView.frame.maxY)
-        points[3].center = CGPoint(x:(3/8)*imageView.frame.maxX, y:(3/4)*imageView.frame.maxY)
-        points[4].center = CGPoint(x:(5/8)*imageView.frame.maxX, y:(3/4)*imageView.frame.maxY)
-        points[5].center = CGPoint(x:(3/4)*imageView.frame.maxX, y:(9/16)*imageView.frame.maxY)
-        points[6].center = CGPoint(x:(3/4)*imageView.frame.maxX, y:(7/16)*imageView.frame.maxY)*/
         points[0].center = CGPoint(x:195.5, y:241.5)
         points[1].center = CGPoint(x:194.0, y:514.0)
         points[2].center = CGPoint(x:233.0, y:596.5)
@@ -137,6 +138,9 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
     }
     
     @objc func update(){
+        if (!photoReady){
+            return
+        }
         self.imageView.image = nil
         for index in 0..<numberOfPoint-2{
             drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
@@ -165,7 +169,6 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }
-    
     
     @objc func pan(_ recognizer: UIPanGestureRecognizer){
         guard let view = recognizer.view else { return }

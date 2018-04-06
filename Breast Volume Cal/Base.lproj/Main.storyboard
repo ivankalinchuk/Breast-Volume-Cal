@@ -278,10 +278,15 @@
                                     <action selector="camera:" destination="1iX-4P-L8w" eventType="touchUpInside" id="xuc-Fe-wAT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QqN-Ob-0lQ">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LPX-Dg-oQc"/>
                         <connections>
+                            <outlet property="imageView" destination="QqN-Ob-0lQ" id="jLp-L4-b2Q"/>
                             <outlet property="test" destination="rPD-Fv-g96" id="eMO-Ks-Kpe"/>
                         </connections>
                     </view>
@@ -289,7 +294,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIv-wT-xv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LwY-cH-cmd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="835"/>
+            <point key="canvasLocation" x="1561.71875" y="834.9609375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DMq-hT-SI1">

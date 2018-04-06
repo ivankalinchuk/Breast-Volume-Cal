@@ -18,7 +18,22 @@ UINavigationControllerDelegate{
     
     let calculator = CalculationUnit();
     var readyToCalibrate = false;
+    var numberOfPoint = 2;
+    var points = [UIImageView]()
+    var lineColor = UIColor.black
+    let initialRect = CGRect(x: 0, y: 0, width: 20, height: 20)
+    var panGestureRecognizer = UIPanGestureRecognizer()
+    var timer = 0
+    var lineWidth = 5
+    var dotWidth = 10
+    var photoReady = false
+    @IBOutlet weak var imageView: UIImageView!
+    
     @IBAction func camera(_ sender: Any) {
+        if(!photoReady){
+            setPoint()
+        }
+        photoReady = true
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -29,6 +44,76 @@ UINavigationControllerDelegate{
         readyToCalibrate = true;
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
+        setTimer()
+        // Do any additional setup after loading the view.
+    }
+    
+    func setTimer(){
+        let displayLink = CADisplayLink(target: self, selector: #selector(update))
+        displayLink.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+        displayLink.preferredFramesPerSecond = 30
+    }
+    
+    func setPoint(){
+        for _ in 0..<numberOfPoint{
+            let dotView = UIImageView(frame: initialRect)
+            var panGestureRecognizer = UIPanGestureRecognizer()
+            panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
+            dotView.backgroundColor  = lineColor
+            dotView.layer.cornerRadius = 10
+            dotView.clipsToBounds = true
+            dotView.addGestureRecognizer(panGestureRecognizer)
+            dotView.isUserInteractionEnabled = true
+            self.view.addSubview(dotView)
+            points.append(dotView)
+        }
+        points[0].center = CGPoint(x:200, y:200)
+        points[1].center = CGPoint(x:200, y:400)
+    }
+    
+    @objc func update(){
+        if (!photoReady){
+            return
+        }
+        self.imageView.image = nil
+        drawLines(fromPoint: points[0].center, toPoint: points[1].center)
+    }
+    
+    
+    func drawLines(fromPoint:CGPoint, toPoint:CGPoint){
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        imageView.image?.draw(in: self.view.frame)
+        let context = UIGraphicsGetCurrentContext()
+        context?.move(to: fromPoint)
+        context?.addLine(to: toPoint)
+        
+        context?.setBlendMode(CGBlendMode.normal)
+        context?.setLineCap(CGLineCap.round)
+        context?.setLineWidth(CGFloat(lineWidth))
+        context?.setStrokeColor(lineColor.cgColor)
+        
+        context?.strokePath()
+        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+    }
+    
+    @objc func pan(_ recognizer: UIPanGestureRecognizer){
+        guard let view = recognizer.view else { return }
+        switch recognizer.state {
+        case .began: fallthrough
+        case .changed:
+            let translation = recognizer.translation(in: self.view)
+            view.center = CGPoint(x:view.center.x, y: view.center.y + translation.y)
+            recognizer.setTranslation(CGPoint.zero, in: self.view)
+            update()
+        case.ended: break
+        default: break
+        }
+    }
+    
     @IBAction func calibrating(_ sender: UIButton) {
         if(readyToCalibrate){
             // create alert
@@ -36,8 +121,8 @@ UINavigationControllerDelegate{
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             //calibrating
-            //let calibratingLength = calculator.dis(a: <#T##CGPoint#>, b: <#T##CGPoint#>)
-            //scaler = 1/calibratingLength
+            let calibratingLength = calculator.dis(a: points[0].center, b: points[1].center)
+            scaler = 1/calibratingLength
             
             // alert show
             self.present(alert, animated: true)
