@@ -169,10 +169,10 @@
             </objects>
             <point key="canvasLocation" x="3431" y="134"/>
         </scene>
-        <!--Side View Controller-->
+        <!--SideViewController-->
         <scene sceneID="Q89-k0-Uxt">
             <objects>
-                <viewController id="sAL-13-u69" customClass="SideViewController" customModule="Breast_Volume_Cal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SideViewController" title="SideViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sAL-13-u69" customClass="SideViewController" customModule="Breast_Volume_Cal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Ft-1m-D41">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,11 +245,11 @@
             </objects>
             <point key="canvasLocation" x="1984.375" y="133.59375"/>
         </scene>
-        <!--Calibrate Controller-->
+        <!--CalibrateController-->
         <scene sceneID="LOi-FN-Mse">
             <objects>
-                <viewController id="QSO-pQ-Vza" customClass="CalibrateController" customModule="Breast_Volume_Cal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1iX-4P-L8w" customClass="CalibrateController">
+                <viewController storyboardIdentifier="CalibrateController" title="CalibrateController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QSO-pQ-Vza" customClass="CalibrateController" customModule="Breast_Volume_Cal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1iX-4P-L8w" customClass="CalibrateController" customModule="Breast_Volume_Cal" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -258,38 +258,40 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="sAL-13-u69" kind="show" id="47R-8p-cGq"/>
+                                    <segue destination="sAL-13-u69" kind="show" id="jn6-FF-khH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPD-Fv-g96">
-                                <rect key="frame" x="326" y="845" width="117" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start Calibrating!"/>
-                                <connections>
-                                    <action selector="calibrating:" destination="1iX-4P-L8w" eventType="touchUpInside" id="3OK-cB-Ohi"/>
-                                    <action selector="test:" destination="LwY-cH-cmd" eventType="touchUpInside" id="AYZ-F4-EaQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u6-mu-ex0">
-                                <rect key="frame" x="357" y="766" width="54" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfb-lN-NuV">
+                                <rect key="frame" x="357" y="750" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera"/>
                                 <connections>
-                                    <action selector="camera:" destination="1iX-4P-L8w" eventType="touchUpInside" id="xuc-Fe-wAT"/>
+                                    <action selector="cameraRoll:" destination="1iX-4P-L8w" eventType="touchUpInside" id="DFw-Zs-9UK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOC-lO-pgO">
+                                <rect key="frame" x="353" y="872" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Calibrate"/>
+                                <connections>
+                                    <action selector="calibrate:" destination="1iX-4P-L8w" eventType="touchUpInside" id="j9O-UV-QpU"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dB5-T1-aRP">
+                                <rect key="frame" x="190" y="189" width="389" height="356"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LPX-Dg-oQc"/>
-                        <connections>
-                            <outlet property="test" destination="rPD-Fv-g96" id="eMO-Ks-Kpe"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="pictureView" destination="dB5-T1-aRP" id="GLc-jx-uEg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIv-wT-xv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="LwY-cH-cmd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="835"/>
+            <point key="canvasLocation" x="1548" y="1480"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DMq-hT-SI1">
@@ -304,7 +306,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWG-H2-HaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="374" y="134"/>
+            <point key="canvasLocation" x="274" y="134"/>
         </scene>
     </scenes>
     <resources>

@@ -8,17 +8,19 @@
 
 import Foundation
 import UIKit
-class CalibrateController: UIViewController,
-    UIImagePickerControllerDelegate,
-UINavigationControllerDelegate{
+@objc class CalibrateController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     let calculator = CalculationUnit();
-    var readyToCalibrate = false;
-    @IBAction func camera(_ sender: Any) {
+    var isReady = false;
+    
+    @IBOutlet weak var pictureView: UIImageView!
+    @IBAction func cameraRoll(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -26,24 +28,36 @@ UINavigationControllerDelegate{
         image.allowsEditing = false
         self.present(image , animated: true)
         
-        readyToCalibrate = true;
+        isReady = true;
     }
     
-    @IBAction func calibrating(_ sender: UIButton) {
-        if(readyToCalibrate){
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            pictureView.image = image
+        }
+        else
+        {
+            //error
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func calibrate(_ sender: Any) {
+        if(isReady){
             // create alert
             let alert = UIAlertController(title: "Calibrating Success", message: "Press 'Next' to go to next steps.", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-           
-            //let calibratingLength = calculator.dis(a: <#T##CGPoint#>, b: <#T##CGPoint#>)
-            //scaler = 1/calibratingLength
+            
+            
             
             // alert show
             self.present(alert, animated: true)
-        
+            
         }
-        
+            
         else{
             let alert = UIAlertController(title: "Cannot Calibrate!", message: "Please take a photo and try again.", preferredStyle: .alert)
             
@@ -54,4 +68,5 @@ UINavigationControllerDelegate{
     }
     
 }
+
 

@@ -33,26 +33,28 @@ UINavigationControllerDelegate {
     
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil);
     
-    @IBAction func start(_ sender: UIButton) {
-        var nextViewController = UIViewController();
-        if(scaler <= 0){
-            nextViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! CalibrateController;
+    @objc @IBAction func start(_ sender: UIButton) {
+        //var nextViewController = UIViewController();
+        if(scaler > 0){
+            self.present(storyBoard.instantiateViewController(withIdentifier: "CalibrateController") as! CalibrateController, animated:true, completion:nil);
         }
             
         else{
             let alert = UIAlertController(title: "Do you want to calibrates again?", message: "You can calibrate your camera again.", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Calibrate", style: .default, handler: {action in
-                nextViewController = self.storyBoard.instantiateViewController(withIdentifier: "nextView") as! CalibrateController;
+                self.present(self.storyBoard.instantiateViewController(withIdentifier: "CalibrateController") as! CalibrateController, animated:true, completion:nil);
             }))
             alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {
                 action in
-                nextViewController = self.storyBoard.instantiateViewController(withIdentifier: "nextView") as! SideViewController;
+                self.present(self.storyBoard.instantiateViewController(withIdentifier: "SideViewController") as! SideViewController, animated:true, completion:nil);
+                //nextViewController = self.storyBoard.instantiateViewController(withIdentifier: "nextView") as! SideViewController;
             }))
             
             self.present(alert, animated: true)
         }
-        self.present(nextViewController, animated:true, completion:nil);
+        //self.present(nextViewController, animated:true, completion:nil);
+    
     }
     @IBOutlet weak var image: UIImageView!
     
