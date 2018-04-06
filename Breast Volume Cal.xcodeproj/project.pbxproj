@@ -21,6 +21,9 @@
 		80DF95432033415900588DE5 /* Breast_Volume_CalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DF95422033415900588DE5 /* Breast_Volume_CalUITests.swift */; };
 		80EF373E205BB86300E9CED9 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF373D205BB86300E9CED9 /* ResultController.swift */; };
 		80EF3740205BC10000E9CED9 /* calculationUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF373F205BC10000E9CED9 /* calculationUnit.swift */; };
+		80F5D2AC2077DC4B001BABC2 /* BVC_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F5D2AB2077DC4B001BABC2 /* BVC_logo.png */; };
+		80F5D2AE2077DD60001BABC2 /* 30414818_10213489738895699_4246859818289070080_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F5D2AD2077DD60001BABC2 /* 30414818_10213489738895699_4246859818289070080_n.png */; };
+		80F5D2B22077DF01001BABC2 /* BVC_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F5D2B12077DF01001BABC2 /* BVC_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		80DF95442033415900588DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80EF373D205BB86300E9CED9 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		80EF373F205BC10000E9CED9 /* calculationUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculationUnit.swift; sourceTree = "<group>"; };
+		80F5D2AB2077DC4B001BABC2 /* BVC_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BVC_logo.png; path = ../../../../../../Downloads/BVC_logo.png; sourceTree = "<group>"; };
+		80F5D2AD2077DD60001BABC2 /* 30414818_10213489738895699_4246859818289070080_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 30414818_10213489738895699_4246859818289070080_n.png; path = ../../../../../../Downloads/30414818_10213489738895699_4246859818289070080_n.png; sourceTree = "<group>"; };
+		80F5D2B12077DF01001BABC2 /* BVC_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BVC_icon.png; path = ../../../../../../Desktop/BVC_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +122,11 @@
 				80DF95242033415900588DE5 /* ViewController.swift */,
 				80DF95262033415900588DE5 /* Main.storyboard */,
 				8067B0932036CC9B007E48F4 /* Point.swift */,
+				80F5D2B12077DF01001BABC2 /* BVC_icon.png */,
 				809257C02035CC070034B3EA /* SideViewController.swift */,
 				8067B091203689D5007E48F4 /* FrontViewController.swift */,
+				80F5D2AD2077DD60001BABC2 /* 30414818_10213489738895699_4246859818289070080_n.png */,
+				80F5D2AB2077DC4B001BABC2 /* BVC_logo.png */,
 				80EF373F205BC10000E9CED9 /* calculationUnit.swift */,
 				80DF95292033415900588DE5 /* Assets.xcassets */,
 				80DF952B2033415900588DE5 /* LaunchScreen.storyboard */,
@@ -254,6 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				80DF952D2033415900588DE5 /* LaunchScreen.storyboard in Resources */,
+				80F5D2B22077DF01001BABC2 /* BVC_icon.png in Resources */,
+				80F5D2AC2077DC4B001BABC2 /* BVC_logo.png in Resources */,
+				80F5D2AE2077DD60001BABC2 /* 30414818_10213489738895699_4246859818289070080_n.png in Resources */,
 				18EA382E206D21730001BF68 /* temp.jpg in Resources */,
 				80DF952A2033415900588DE5 /* Assets.xcassets in Resources */,
 				80DF95282033415900588DE5 /* Main.storyboard in Resources */,
