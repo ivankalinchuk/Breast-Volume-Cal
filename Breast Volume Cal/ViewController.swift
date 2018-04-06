@@ -33,7 +33,7 @@ UINavigationControllerDelegate {
     
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil);
     
-    @objc @IBAction func start(_ sender: UIButton) {
+    @IBAction func start(_ sender: UIButton) {
         //var nextViewController = UIViewController();
         if(scaler > 0){
             self.present(storyBoard.instantiateViewController(withIdentifier: "CalibrateController") as! CalibrateController, animated:true, completion:nil);
@@ -48,13 +48,11 @@ UINavigationControllerDelegate {
             alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {
                 action in
                 self.present(self.storyBoard.instantiateViewController(withIdentifier: "SideViewController") as! SideViewController, animated:true, completion:nil);
-                //nextViewController = self.storyBoard.instantiateViewController(withIdentifier: "nextView") as! SideViewController;
             }))
             
             self.present(alert, animated: true)
         }
         //self.present(nextViewController, animated:true, completion:nil);
-    
     }
     @IBOutlet weak var image: UIImageView!
     

@@ -8,16 +8,9 @@
 
 import Foundation
 import UIKit
-@objc class CalibrateController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
-    
-/*
     let calculator = CalculationUnit();
-<<<<<<< HEAD
     var readyToCalibrate = false;
     var numberOfPoint = 2;
     var points = [UIImageView]()
@@ -29,18 +22,13 @@ import UIKit
     var dotWidth = 10
     var photoReady = false
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var pictureView: UIImageView!
     
     @IBAction func camera(_ sender: Any) {
         if(!photoReady){
             setPoint()
         }
         photoReady = true
-=======
-    var isReady = false;
-    
-    @IBOutlet weak var pictureView: UIImageView!
-    @IBAction func cameraRoll(_ sender: Any) {
->>>>>>> 2eec204dde6d8871b380065bc95458ddcd29ddf5
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -48,7 +36,7 @@ import UIKit
         image.allowsEditing = false
         self.present(image , animated: true)
         
-        isReady = true;
+        readyToCalibrate = true;
     }
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -63,7 +51,6 @@ import UIKit
         self.dismiss(animated: true, completion: nil)
     }
     
-<<<<<<< HEAD
     override func viewDidLoad() {
         super.viewDidLoad()
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
@@ -134,40 +121,33 @@ import UIKit
         }
     }
     
-    @IBAction func calibrating(_ sender: UIButton) {
-        if(readyToCalibrate){
-=======
-    
-    @IBAction func calibrate(_ sender: Any) {
-        if(isReady){
->>>>>>> 2eec204dde6d8871b380065bc95458ddcd29ddf5
-            // create alert
-            let alert = UIAlertController(title: "Calibrating Success", message: "Press 'Next' to go to next steps.", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-<<<<<<< HEAD
-            //calibrating
-            let calibratingLength = calculator.dis(a: points[0].center, b: points[1].center)
-            scaler = 1/calibratingLength
-=======
-            
-            
->>>>>>> 2eec204dde6d8871b380065bc95458ddcd29ddf5
-            
-            // alert show
-            self.present(alert, animated: true)
-            
-        }
-            
-        else{
-            let alert = UIAlertController(title: "Cannot Calibrate!", message: "Please take a photo and try again.", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true)
-        }
-        
+     @IBAction func calibrating(_ sender: UIButton) {
+     if(readyToCalibrate){
+     // create alert
+     let alert = UIAlertController(title: "Calibrating Success", message: "Press 'Next' to go to next steps.", preferredStyle: .alert)
+     
+     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+     //calibrating
+     let calibratingLength = calculator.dis(a: points[0].center, b: points[1].center)
+     scaler = 1/calibratingLength
+     
+     // alert show
+     self.present(alert, animated: true)
+     
+     }
+     
+     else{
+     let alert = UIAlertController(title: "Cannot Calibrate!", message: "Please take a photo and try again.", preferredStyle: .alert)
+     
+     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+     self.present(alert, animated: true)
+     }
+     
+     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    
 }
-*/
-}
+

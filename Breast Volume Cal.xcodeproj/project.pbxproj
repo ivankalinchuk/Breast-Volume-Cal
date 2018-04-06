@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181AD2752077B9D10012D993 /* CalibrateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD2742077B9D10012D993 /* CalibrateController.swift */; };
 		18EA382E206D21730001BF68 /* temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18EA382D206D21730001BF68 /* temp.jpg */; };
 		8067B092203689D5007E48F4 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8067B091203689D5007E48F4 /* FrontViewController.swift */; };
 		8067B0942036CC9B007E48F4 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8067B0932036CC9B007E48F4 /* Point.swift */; };
-		8081F9EE20777C5F00A4AD0E /* CalibrateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8081F9ED20777C5F00A4AD0E /* CalibrateController.swift */; };
 		809257C12035CC070034B3EA /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809257C02035CC070034B3EA /* SideViewController.swift */; };
 		80DF95232033415900588DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DF95222033415900588DE5 /* AppDelegate.swift */; };
 		80DF95252033415900588DE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DF95242033415900588DE5 /* ViewController.swift */; };
@@ -41,10 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181AD2742077B9D10012D993 /* CalibrateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrateController.swift; sourceTree = "<group>"; };
 		18EA382D206D21730001BF68 /* temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = temp.jpg; sourceTree = SOURCE_ROOT; };
 		8067B091203689D5007E48F4 /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		8067B0932036CC9B007E48F4 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
-		8081F9ED20777C5F00A4AD0E /* CalibrateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrateController.swift; sourceTree = "<group>"; };
 		809257C02035CC070034B3EA /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
 		80DF951F2033415900588DE5 /* Breast Volume Cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breast Volume Cal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DF95222033415900588DE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +111,7 @@
 		80DF95212033415900588DE5 /* Breast Volume Cal */ = {
 			isa = PBXGroup;
 			children = (
+				181AD2742077B9D10012D993 /* CalibrateController.swift */,
 				80DF95222033415900588DE5 /* AppDelegate.swift */,
 				80DF95242033415900588DE5 /* ViewController.swift */,
 				80DF95262033415900588DE5 /* Main.storyboard */,
@@ -123,7 +124,6 @@
 				18EA382D206D21730001BF68 /* temp.jpg */,
 				80DF952E2033415900588DE5 /* Info.plist */,
 				80EF373D205BB86300E9CED9 /* ResultController.swift */,
-				8081F9ED20777C5F00A4AD0E /* CalibrateController.swift */,
 			);
 			path = "Breast Volume Cal";
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 				809257C12035CC070034B3EA /* SideViewController.swift in Sources */,
 				80EF3740205BC10000E9CED9 /* calculationUnit.swift in Sources */,
 				80DF95232033415900588DE5 /* AppDelegate.swift in Sources */,
-				8081F9EE20777C5F00A4AD0E /* CalibrateController.swift in Sources */,
+				181AD2752077B9D10012D993 /* CalibrateController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
