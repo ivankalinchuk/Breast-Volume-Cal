@@ -19,6 +19,10 @@ class CalculationUnit{
         return square.squareRoot();
     }
     
+    func convertToCM(input: Double)->Double{
+        return input * scaler;
+    }
+    
     func midPoint(start : CGPoint , end:CGPoint)->(CGPoint){
         let addX = (end.x - start.x)/2;
         let addY = (end.y - start.y)/2;
