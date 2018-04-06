@@ -16,23 +16,21 @@ class ResultController: UIViewController,
     UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
     //From Internet
+    @IBOutlet weak var geometricLabel: UILabel!
+    @IBOutlet weak var breastvLabel: UILabel!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func breastVCalulation(sn : Double,ff : Double ,fn : Double )->(Double){
-        let result = -231.66 + 0.5747*sn*sn + 18.5478 * ff + 14.5087 * fn;
-        return result;
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let calculator = CalculationUnit()
+        breastvLabel.text!.append(String(breastV))
+        geometricLabel.text!.append(String(calculator.geometricCalculation()))
+        // Do any additional setup after loading the view.
     }
-    /*
-    func geometricCalculation(eclipseA : Double , eclipseB : Double ,eclipseC : Double, triangleHeight : Double , triangleBase : Double )->(Double){
-        let eclipse = 4/6 * Double.pi * eclipseA * eclipseB * eclipseC;
-        let cone = 1/6 * Double.pi * eclipseA * eclipseB * coneHeight;
-        let result = eclipse + cone;
-        return result;
-    }
-    */
+    
 }
 
 

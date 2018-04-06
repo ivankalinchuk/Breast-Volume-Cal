@@ -78,7 +78,7 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
             points.append(dotView)
         }
         points[0].center = CGPoint(x:200, y:200)
-        points[1].center = CGPoint(x:200, y:400)
+        points[1].center = CGPoint(x:200, y:250)
     }
     
     @objc func update(){
@@ -128,12 +128,14 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
      
      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
      //calibrating
-     let calibratingLength = calculator.dis(a: points[0].center, b: points[1].center)
+     let calibratingLength =  Double(points[1].center.y - points[0].center.y)
+        print(calibratingLength)
      scaler = 1/calibratingLength
      
      // alert show
      self.present(alert, animated: true)
      
+        print(scaler)
      }
      
      else{

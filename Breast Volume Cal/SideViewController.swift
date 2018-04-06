@@ -89,6 +89,10 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         
         calculator.calculateFF(startCurve: points[1].center, curveLeft: points[2].center, midCurve: points[3].center, curveRight: points[4].center, endCurve: points[5].center)
         calculator.calculateFN(startCurve: points[1].center, curveLeft: points[2].center, midCurve: points[3].center, curveRight: points[4].center, nipple: points[6].center)
+        
+        calculator.calculateConeHeight(topSide: points[0].center, startCurve: points[1].center)
+        calculator.calculateEclipseA(startCurve: points[1].center, endCurve: points[5].center)
+        calculator.calculateEclipseC(midCurve: points[3].center, startCurve: points[1].center, endCurve: points[5].center)
     }
     
     func setTimer(){

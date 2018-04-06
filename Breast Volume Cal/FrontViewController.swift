@@ -26,6 +26,8 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         nippleFront = points[9].center
         calculator.calculateSN(sternalNotch: sternalNotch, nippleFront: nippleFront)
         calculator.calBreastV()
+        
+        calculator.calculateEclipseB(left: points[1].center, right: points[5].center)
     }
     
     @IBOutlet weak var pictureView: UIImageView!
@@ -111,6 +113,8 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
             labels.append(label)
             self.view.addSubview(label)
         }
+        labels[1].text = "Left"
+        labels[5].text = "Right"
         labels[8].text = "Sternal Notch"
         labels[9].text = "Nipple"
     }
@@ -148,6 +152,10 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         for index in 0..<numberOfPoint-2{
             drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
         }
+        labels[1].center.x = points[1].center.x
+        labels[1].center.y = points[1].center.y+20
+        labels[5].center.x = points[5].center.x
+        labels[5].center.y = points[5].center.y+20
         labels[8].center.x = points[8].center.x
         labels[8].center.y = points[8].center.y+20
         labels[9].center.x = points[9].center.x

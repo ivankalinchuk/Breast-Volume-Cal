@@ -35,7 +35,7 @@ UINavigationControllerDelegate {
     
     @IBAction func start(_ sender: UIButton) {
         //var nextViewController = UIViewController();
-        if(scaler > 0){
+        if(scaler <= 0){
             self.present(storyBoard.instantiateViewController(withIdentifier: "CalibrateController") as! CalibrateController, animated:true, completion:nil);
         }
             

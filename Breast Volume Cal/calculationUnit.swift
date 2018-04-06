@@ -16,7 +16,7 @@ class CalculationUnit{
         let x1 = Double(b.x);
         let y1 = Double(b.y);
         let square = pow(x0-x1,2) + pow(y0-y1,2);
-        return square.squareRoot();
+        return scale(input: square.squareRoot());
     }
     
     func convertToCM(input: Double)->Double{
@@ -31,19 +31,34 @@ class CalculationUnit{
         midPoint.y = midPoint.y + addY;
         return midPoint;
     }
-    /*
-    func projection(a:CGPoint , b:CGPoint)->(CGPoint){
-        var proj = a;
-        proj.y = b.y;
-        return proj;
+    
+    func scale(input: Double)->Double{
+        return input*scaler
     }
-    */
-    func measurement(topSide :CGPoint , startCurve:CGPoint , endCurve:CGPoint , midCurve:CGPoint,topFront:CGPoint,bottomFront:CGPoint,left:CGPoint,right:CGPoint){
+    
+    func calculateConeHeight(topSide: CGPoint, startCurve: CGPoint){
         coneHeight = dis(a:topSide,b:startCurve);
+    }
+    
+    func calculateEclipseA(startCurve: CGPoint, endCurve: CGPoint){
         eclipseA = dis(a: startCurve, b: endCurve);
+    }
+    
+    func calculateEclipseB(left: CGPoint, right: CGPoint){
         eclipseB = dis(a: left, b: right);
+    }
+    
+    func calculateEclipseC(midCurve: CGPoint, startCurve: CGPoint, endCurve: CGPoint){
         eclipseC = dis(a: midCurve, b: midPoint(start: startCurve, end: endCurve));
     }
+    
+    func geometricCalculation()->(Double){
+        let eclipse = 4/6 * Double.pi * eclipseA * eclipseB * eclipseC;
+        let cone = 1/6 * Double.pi * eclipseA * eclipseB * coneHeight;
+        let result = eclipse + cone;
+        return result;
+    }
+
     
     //Calculate arc distant from fold to nipple
     func calculateFN(startCurve : CGPoint, curveLeft : CGPoint, midCurve : CGPoint, curveRight : CGPoint, nipple :CGPoint){
