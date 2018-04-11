@@ -25,7 +25,7 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
     var dotWidth = 10
     var touchedIndex = 0
     var points = [UIImageView]()
-    var lineColor = UIColor.black
+    var lineColor = UIColor.white
     let initialRect = CGRect(x: 0, y: 0, width: 20, height: 20)
     var panGestureRecognizer = UIPanGestureRecognizer()
     var timer = 0

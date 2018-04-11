@@ -22,7 +22,7 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     var touchedIndex = 0
     var points = [UIImageView]()
     var labels = [UILabel]()
-    var lineColor = UIColor.black
+    var lineColor = UIColor.white
     let initialRect = CGRect(x: 0, y: 0, width: 20, height: 20)
     var panGestureRecognizer = UIPanGestureRecognizer()
     var timer = 0
