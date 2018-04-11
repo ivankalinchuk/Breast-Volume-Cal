@@ -91,6 +91,8 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         setTimer()
         setLabel()
         // Do any additional setup after loading the view.
+        
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
     }
 
     override func didReceiveMemoryWarning() {

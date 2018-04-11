@@ -16,13 +16,17 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         setTimer()
         setLabel()
         // Do any additional setup after loading the view.
+        
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
     }
-
+    //UI Object
     @IBOutlet weak var pictureView: UIImageView!
-    
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nextScreen: UIButton!
+    @IBOutlet weak var restart: UIButton!
     
-   
+    
+    
     var lastPoint = CGPoint.zero
     var swiped = false
     var numberOfPoint = 7

@@ -24,6 +24,15 @@ var eclipseB = 0.0;
 var eclipseC = 0.0;
 var scaler = -1.0;
 
+//image singleton
+/*
+let startButton = UIImage(named: "button_get-start.png");
+let nextButton = UIImage(named: "button_next.png");
+let calculateButton = UIImage(named: "button_calculate.png");
+let restartButton = UIImage(named: "button_restart.png");
+let calibrateButton = UIImage(named: "button_calibrate.png");
+let finishButton = UIImage(named: "button_finish.png");
+*/
 
 class ViewController: UIViewController,
     UIImagePickerControllerDelegate,
@@ -54,12 +63,18 @@ UINavigationControllerDelegate {
         }
         //self.present(nextViewController, animated:true, completion:nil);
     }
+    
     @IBOutlet weak var image: UIImageView!
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
     }
     
     

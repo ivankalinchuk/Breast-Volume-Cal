@@ -56,6 +56,8 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
         setTimer()
         // Do any additional setup after loading the view.
+        
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
     }
     
     func setTimer(){
@@ -151,5 +153,7 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 }
 

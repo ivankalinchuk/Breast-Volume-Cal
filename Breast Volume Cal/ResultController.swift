@@ -29,6 +29,8 @@ UINavigationControllerDelegate {
         breastvLabel.text!.append(String(breastV))
         geometricLabel.text!.append(String(calculator.geometricCalculation()))
         // Do any additional setup after loading the view.
+        
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
     }
     
 }

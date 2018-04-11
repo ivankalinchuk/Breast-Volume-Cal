@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		181AD2752077B9D10012D993 /* CalibrateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD2742077B9D10012D993 /* CalibrateController.swift */; };
 		18EA382E206D21730001BF68 /* temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18EA382D206D21730001BF68 /* temp.jpg */; };
+		80098641207B469B0029AF7E /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80098640207B469B0029AF7E /* background.jpg */; };
+		80098643207DFFAD0029AF7E /* button_get-start.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098642207DFFAC0029AF7E /* button_get-start.png */; };
+		80098645207DFFB30029AF7E /* button_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098644207DFFB20029AF7E /* button_next.png */; };
+		80098649207E000B0029AF7E /* button_calculate.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098648207E000B0029AF7E /* button_calculate.png */; };
+		8009864B207E00100029AF7E /* button_restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 8009864A207E00100029AF7E /* button_restart.png */; };
+		8009864D207E00150029AF7E /* button_calibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = 8009864C207E00150029AF7E /* button_calibrate.png */; };
+		8009864F207E019F0029AF7E /* button_finish.png in Resources */ = {isa = PBXBuildFile; fileRef = 8009864E207E019F0029AF7E /* button_finish.png */; };
+		80098651207E067E0029AF7E /* button_take-a-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098650207E067D0029AF7E /* button_take-a-photo.png */; };
+		80098653207E06830029AF7E /* button_choose-a-photo-from-your-library.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098652207E06830029AF7E /* button_choose-a-photo-from-your-library.png */; };
+		80098656207E0F490029AF7E /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80098655207E0A090029AF7E /* Pacifico.ttf */; };
+		80098658207E11140029AF7E /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098657207E11130029AF7E /* logo2.png */; };
+		8009865A207E11180029AF7E /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098659207E11180029AF7E /* logo.png */; };
 		8067B092203689D5007E48F4 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8067B091203689D5007E48F4 /* FrontViewController.swift */; };
 		8067B0942036CC9B007E48F4 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8067B0932036CC9B007E48F4 /* Point.swift */; };
 		809257C12035CC070034B3EA /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809257C02035CC070034B3EA /* SideViewController.swift */; };
@@ -46,6 +58,18 @@
 /* Begin PBXFileReference section */
 		181AD2742077B9D10012D993 /* CalibrateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrateController.swift; sourceTree = "<group>"; };
 		18EA382D206D21730001BF68 /* temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = temp.jpg; sourceTree = SOURCE_ROOT; };
+		80098640207B469B0029AF7E /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../../../../Downloads/background.jpg; sourceTree = "<group>"; };
+		80098642207DFFAC0029AF7E /* button_get-start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_get-start.png"; path = "../../../../../../Downloads/button_get-start.png"; sourceTree = "<group>"; };
+		80098644207DFFB20029AF7E /* button_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_next.png; path = ../../../../../../Downloads/button_next.png; sourceTree = "<group>"; };
+		80098648207E000B0029AF7E /* button_calculate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_calculate.png; path = ../../../../../../Downloads/button_calculate.png; sourceTree = "<group>"; };
+		8009864A207E00100029AF7E /* button_restart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_restart.png; path = ../../../../../../Downloads/button_restart.png; sourceTree = "<group>"; };
+		8009864C207E00150029AF7E /* button_calibrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_calibrate.png; path = ../../../../../../Downloads/button_calibrate.png; sourceTree = "<group>"; };
+		8009864E207E019F0029AF7E /* button_finish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_finish.png; path = ../../../../../../Downloads/button_finish.png; sourceTree = "<group>"; };
+		80098650207E067D0029AF7E /* button_take-a-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_take-a-photo.png"; path = "../../../../../../Downloads/button_take-a-photo.png"; sourceTree = "<group>"; };
+		80098652207E06830029AF7E /* button_choose-a-photo-from-your-library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_choose-a-photo-from-your-library.png"; path = "../../../../../../Downloads/button_choose-a-photo-from-your-library.png"; sourceTree = "<group>"; };
+		80098655207E0A090029AF7E /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = ../../../../../../../Downloads/pacifico/Pacifico.ttf; sourceTree = "<group>"; };
+		80098657207E11130029AF7E /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo2.png; path = ../../../../../../Downloads/logo2.png; sourceTree = "<group>"; };
+		80098659207E11180029AF7E /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../../../../Downloads/logo.png; sourceTree = "<group>"; };
 		8067B091203689D5007E48F4 /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		8067B0932036CC9B007E48F4 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		809257C02035CC070034B3EA /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80098654207E09F00029AF7E /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				80098655207E0A090029AF7E /* Pacifico.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		80DF95162033415900588DE5 = {
 			isa = PBXGroup;
 			children = (
@@ -117,12 +149,24 @@
 		80DF95212033415900588DE5 /* Breast Volume Cal */ = {
 			isa = PBXGroup;
 			children = (
+				80098654207E09F00029AF7E /* Font */,
 				181AD2742077B9D10012D993 /* CalibrateController.swift */,
 				80DF95222033415900588DE5 /* AppDelegate.swift */,
+				80098640207B469B0029AF7E /* background.jpg */,
 				80DF95242033415900588DE5 /* ViewController.swift */,
+				80098642207DFFAC0029AF7E /* button_get-start.png */,
 				80DF95262033415900588DE5 /* Main.storyboard */,
+				80098659207E11180029AF7E /* logo.png */,
+				80098644207DFFB20029AF7E /* button_next.png */,
+				80098652207E06830029AF7E /* button_choose-a-photo-from-your-library.png */,
+				80098657207E11130029AF7E /* logo2.png */,
 				8067B0932036CC9B007E48F4 /* Point.swift */,
+				80098648207E000B0029AF7E /* button_calculate.png */,
+				80098650207E067D0029AF7E /* button_take-a-photo.png */,
+				8009864E207E019F0029AF7E /* button_finish.png */,
+				8009864A207E00100029AF7E /* button_restart.png */,
 				80F5D2B12077DF01001BABC2 /* BVC_icon.png */,
+				8009864C207E00150029AF7E /* button_calibrate.png */,
 				809257C02035CC070034B3EA /* SideViewController.swift */,
 				8067B091203689D5007E48F4 /* FrontViewController.swift */,
 				80F5D2AD2077DD60001BABC2 /* 30414818_10213489738895699_4246859818289070080_n.png */,
@@ -263,12 +307,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				80DF952D2033415900588DE5 /* LaunchScreen.storyboard in Resources */,
+				80098643207DFFAD0029AF7E /* button_get-start.png in Resources */,
+				80098649207E000B0029AF7E /* button_calculate.png in Resources */,
 				80F5D2B22077DF01001BABC2 /* BVC_icon.png in Resources */,
 				80F5D2AC2077DC4B001BABC2 /* BVC_logo.png in Resources */,
+				8009864B207E00100029AF7E /* button_restart.png in Resources */,
+				80098645207DFFB30029AF7E /* button_next.png in Resources */,
+				80098658207E11140029AF7E /* logo2.png in Resources */,
+				8009864D207E00150029AF7E /* button_calibrate.png in Resources */,
+				8009864F207E019F0029AF7E /* button_finish.png in Resources */,
+				8009865A207E11180029AF7E /* logo.png in Resources */,
 				80F5D2AE2077DD60001BABC2 /* 30414818_10213489738895699_4246859818289070080_n.png in Resources */,
 				18EA382E206D21730001BF68 /* temp.jpg in Resources */,
+				80098651207E067E0029AF7E /* button_take-a-photo.png in Resources */,
 				80DF952A2033415900588DE5 /* Assets.xcassets in Resources */,
 				80DF95282033415900588DE5 /* Main.storyboard in Resources */,
+				80098653207E06830029AF7E /* button_choose-a-photo-from-your-library.png in Resources */,
+				80098641207B469B0029AF7E /* background.jpg in Resources */,
+				80098656207E0F490029AF7E /* Pacifico.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
