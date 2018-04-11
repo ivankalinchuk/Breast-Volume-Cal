@@ -8,8 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		181AD2752077B9D10012D993 /* CalibrateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD2742077B9D10012D993 /* CalibrateController.swift */; };
+		181E08DD207E18FA003FB3E9 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181E08DC207E18DF003FB3E9 /* Pacifico.ttf */; };
+		181E08DE207E1C96003FB3E9 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80098662207E16000029AF7E /* background.jpg */; };
+		181E08DF207E1C99003FB3E9 /* button_get-start.png in Resources */ = {isa = PBXBuildFile; fileRef = 8009865C207E15FF0029AF7E /* button_get-start.png */; };
+		181E08E0207E1C9C003FB3E9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098669207E16010029AF7E /* logo.png */; };
+		181E08E1207E1CA0003FB3E9 /* button_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098665207E16000029AF7E /* button_next.png */; };
+		181E08E2207E1CA4003FB3E9 /* button_choose-a-photo-from-your-library.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098668207E16010029AF7E /* button_choose-a-photo-from-your-library.png */; };
+		181E08E3207E1CA8003FB3E9 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098660207E16000029AF7E /* logo2.png */; };
+		181E08E4207E1CAB003FB3E9 /* button_calculate.png in Resources */ = {isa = PBXBuildFile; fileRef = 8009865F207E15FF0029AF7E /* button_calculate.png */; };
+		181E08E5207E1CAE003FB3E9 /* button_take-a-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098663207E16000029AF7E /* button_take-a-photo.png */; };
+		181E08E6207E1CB1003FB3E9 /* button_finish.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098667207E16000029AF7E /* button_finish.png */; };
+		181E08E7207E1CB3003FB3E9 /* button_restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098661207E16000029AF7E /* button_restart.png */; };
+		181E08E8207E1CB6003FB3E9 /* BVC_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8009865D207E15FF0029AF7E /* BVC_icon.png */; };
+		181E08E9207E1CBA003FB3E9 /* button_calibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = 8009865E207E15FF0029AF7E /* button_calibrate.png */; };
+		181E08EA207E1CBE003FB3E9 /* 30414818_10213489738895699_4246859818289070080_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098666207E16000029AF7E /* 30414818_10213489738895699_4246859818289070080_n.png */; };
+		181E08EB207E1CC5003FB3E9 /* BVC_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 80098664207E16000029AF7E /* BVC_logo.png */; };
 		18EA382E206D21730001BF68 /* temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18EA382D206D21730001BF68 /* temp.jpg */; };
-		80098656207E0F490029AF7E /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80098655207E0A090029AF7E /* Pacifico.ttf */; };
 		8067B092203689D5007E48F4 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8067B091203689D5007E48F4 /* FrontViewController.swift */; };
 		8067B0942036CC9B007E48F4 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8067B0932036CC9B007E48F4 /* Point.swift */; };
 		809257C12035CC070034B3EA /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809257C02035CC070034B3EA /* SideViewController.swift */; };
@@ -43,8 +57,8 @@
 
 /* Begin PBXFileReference section */
 		181AD2742077B9D10012D993 /* CalibrateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrateController.swift; sourceTree = "<group>"; };
+		181E08DC207E18DF003FB3E9 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		18EA382D206D21730001BF68 /* temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = temp.jpg; path = "Breast Volume Cal/Picture/temp.jpg"; sourceTree = SOURCE_ROOT; };
-		80098655207E0A090029AF7E /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = ../../../../../../../Downloads/pacifico/Pacifico.ttf; sourceTree = "<group>"; };
 		8009865C207E15FF0029AF7E /* button_get-start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_get-start.png"; sourceTree = "<group>"; };
 		8009865D207E15FF0029AF7E /* BVC_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BVC_icon.png; sourceTree = "<group>"; };
 		8009865E207E15FF0029AF7E /* button_calibrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_calibrate.png; sourceTree = "<group>"; };
@@ -107,7 +121,7 @@
 		80098654207E09F00029AF7E /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				80098655207E0A090029AF7E /* Pacifico.ttf */,
+				181E08DC207E18DF003FB3E9 /* Pacifico.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -300,11 +314,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181E08E4207E1CAB003FB3E9 /* button_calculate.png in Resources */,
 				80DF952D2033415900588DE5 /* LaunchScreen.storyboard in Resources */,
+				181E08EA207E1CBE003FB3E9 /* 30414818_10213489738895699_4246859818289070080_n.png in Resources */,
+				181E08E8207E1CB6003FB3E9 /* BVC_icon.png in Resources */,
+				181E08E7207E1CB3003FB3E9 /* button_restart.png in Resources */,
+				181E08EB207E1CC5003FB3E9 /* BVC_logo.png in Resources */,
+				181E08DD207E18FA003FB3E9 /* Pacifico.ttf in Resources */,
+				181E08E9207E1CBA003FB3E9 /* button_calibrate.png in Resources */,
+				181E08E2207E1CA4003FB3E9 /* button_choose-a-photo-from-your-library.png in Resources */,
 				18EA382E206D21730001BF68 /* temp.jpg in Resources */,
+				181E08DF207E1C99003FB3E9 /* button_get-start.png in Resources */,
+				181E08E1207E1CA0003FB3E9 /* button_next.png in Resources */,
+				181E08E0207E1C9C003FB3E9 /* logo.png in Resources */,
+				181E08E6207E1CB1003FB3E9 /* button_finish.png in Resources */,
+				181E08DE207E1C96003FB3E9 /* background.jpg in Resources */,
+				181E08E5207E1CAE003FB3E9 /* button_take-a-photo.png in Resources */,
+				181E08E3207E1CA8003FB3E9 /* logo2.png in Resources */,
 				80DF952A2033415900588DE5 /* Assets.xcassets in Resources */,
 				80DF95282033415900588DE5 /* Main.storyboard in Resources */,
-				80098656207E0F490029AF7E /* Pacifico.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

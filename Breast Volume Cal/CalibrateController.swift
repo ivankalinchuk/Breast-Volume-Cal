@@ -25,10 +25,6 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
     @IBOutlet weak var pictureView: UIImageView!
     
     @IBAction func camera(_ sender: Any) {
-        if(!photoReady){
-            setPoint()
-        }
-        photoReady = true
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -37,6 +33,11 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
         self.present(image , animated: true)
         
         readyToCalibrate = true;
+        
+        if(!photoReady){
+            setPoint()
+        }
+        photoReady = true
     }
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -79,8 +80,8 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
             self.view.addSubview(dotView)
             points.append(dotView)
         }
-        points[0].center = CGPoint(x:200, y:200)
-        points[1].center = CGPoint(x:200, y:250)
+        points[0].center = CGPoint(x:600, y:200)
+        points[1].center = CGPoint(x:600, y:250)
     }
     
     @objc func update(){

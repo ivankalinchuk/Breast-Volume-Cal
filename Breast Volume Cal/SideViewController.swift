@@ -9,16 +9,7 @@
 import UIKit
 
 class SideViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
-        setTimer()
-        setLabel()
-        // Do any additional setup after loading the view.
-        
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
-    }
+    
     //UI Object
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
@@ -46,30 +37,43 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
     var labels = [UILabel]()
     var photoReady = false
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
+        nextScreen.isEnabled = false
+        setTimer()
+        setLabel()
+        // Do any additional setup after loading the view.
+        
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
+    }
+    
     @IBAction func camera(_ sender: Any) {
-        if(!photoReady){
-            setPoint()
-        }
-        photoReady = true
         let image = UIImagePickerController()
         image.delegate = self
         
         image.sourceType = UIImagePickerControllerSourceType.camera
         image.allowsEditing = false
         self.present(image , animated: true)
-    }
-    
-    @IBAction func library(_ sender: Any) {
         if(!photoReady){
             setPoint()
         }
         photoReady = true
+        nextScreen.isEnabled = true
+    }
+    
+    @IBAction func library(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
         
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
         image.allowsEditing = false
         self.present(image , animated: true)
+        if(!photoReady){
+            setPoint()
+        }
+        photoReady = true
+        nextScreen.isEnabled = true
     }
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

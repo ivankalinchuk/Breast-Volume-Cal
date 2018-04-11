@@ -192,6 +192,7 @@
                         <viewLayoutGuide key="safeArea" id="tFO-Bq-x31"/>
                     </view>
                     <connections>
+                        <outlet property="calculateButton" destination="IkF-Lb-c2W" id="DQP-tB-Iit"/>
                         <outlet property="imageView" destination="SzH-vZ-FDr" id="Lfz-bO-7Oz"/>
                         <outlet property="pictureView" destination="PcG-p6-zDb" id="KEb-4c-Qqe"/>
                     </connections>
@@ -313,7 +314,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LaS-6f-DDM">
-                                <rect key="frame" x="0.0" y="-3" width="768" height="1027"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -359,6 +360,6 @@
         <image name="logo2.png" width="869" height="652"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GwH-Br-vQK"/>
+        <segue reference="3Mh-WU-K05"/>
     </inferredMetricsTieBreakers>
 </document>

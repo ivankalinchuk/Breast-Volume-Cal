@@ -12,6 +12,35 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
 
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var pictureView: UIImageView!
+    @IBOutlet weak var calculateButton: UIButton!
+    var lastPoint = CGPoint.zero
+    var swiped = false
+    var numberOfPoint = 10
+    var lineWidth = 5
+    var dotWidth = 10
+    var touchedIndex = 0
+    var points = [UIImageView]()
+    var labels = [UILabel]()
+    var lineColor = UIColor.black
+    let initialRect = CGRect(x: 0, y: 0, width: 20, height: 20)
+    var panGestureRecognizer = UIPanGestureRecognizer()
+    var timer = 0
+    var sternalNotch = CGPoint()
+    var nippleFront = CGPoint()
+    var photoReady = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
+        calculateButton.isEnabled = false
+        setTimer()
+        setLabel()
+        // Do any additional setup after loading the view.
+        
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
+    }
+    
     @IBAction func Calculate(_ sender: UIButton) {
         let calculator = CalculationUnit();
         
@@ -30,47 +59,32 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         calculator.calculateEclipseB(left: points[1].center, right: points[5].center)
     }
     
-    @IBOutlet weak var pictureView: UIImageView!
-    var lastPoint = CGPoint.zero
-    var swiped = false
-    var numberOfPoint = 10
-    var lineWidth = 5
-    var dotWidth = 10
-    var touchedIndex = 0
-    var points = [UIImageView]()
-    var labels = [UILabel]()
-    var lineColor = UIColor.black
-    let initialRect = CGRect(x: 0, y: 0, width: 20, height: 20)
-    var panGestureRecognizer = UIPanGestureRecognizer()
-    var timer = 0
-    var sternalNotch = CGPoint()
-    var nippleFront = CGPoint()
-    var photoReady = false
-    
     @IBAction func camera(_ sender: Any) {
-        if(!photoReady){
-            setPoint()
-        }
-        photoReady = true
         let image = UIImagePickerController()
         image.delegate = self
         
         image.sourceType = UIImagePickerControllerSourceType.camera
         image.allowsEditing = false
         self.present(image , animated: true)
-    }
-    
-    @IBAction func library(_ sender: Any) {
         if(!photoReady){
             setPoint()
         }
         photoReady = true
+        calculateButton.isEnabled = true
+    }
+    
+    @IBAction func library(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
         
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
         image.allowsEditing = false
         self.present(image , animated: true)
+        if(!photoReady){
+            setPoint()
+        }
+        photoReady = true
+        calculateButton.isEnabled = true
     }
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -83,16 +97,6 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
             //error
         }
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
-        setTimer()
-        setLabel()
-        // Do any additional setup after loading the view.
-        
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
     }
 
     override func didReceiveMemoryWarning() {
