@@ -14,20 +14,13 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var calculateButton: UIButton!
-    var lastPoint = CGPoint.zero
-    var swiped = false
-    var numberOfPoint = 10
+    var numberOfPoint = 4
     var lineWidth = 5
     var dotWidth = 10
-    var touchedIndex = 0
     var points = [UIImageView]()
     var labels = [UILabel]()
     var lineColor = UIColor.white
-    let initialRect = CGRect(x: 0, y: 0, width: 20, height: 20)
     var panGestureRecognizer = UIPanGestureRecognizer()
-    var timer = 0
-    var sternalNotch = CGPoint()
-    var nippleFront = CGPoint()
     var photoReady = false
     
     override func viewDidLoad() {
@@ -45,18 +38,14 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     @IBAction func Calculate(_ sender: UIButton) {
         let calculator = CalculationUnit();
         
-        
         //Geometric Method Calaulation
         geometric = calculator.geometricCalculation();
         
-        
         //Breast-V Method Calculation
-        sternalNotch = points[8].center
-        nippleFront = points[9].center
-        calculator.calculateSN(sternalNotch: sternalNotch, nippleFront: nippleFront)
+        calculator.calculateSN(sternalNotch: points[2].center, nippleFront: points[3].center)
         calculator.calBreastV()
         
-        calculator.calculateEclipseB(left: points[1].center, right: points[5].center)
+        calculator.calculateEclipseB(left: points[0].center, right: points[1].center)
     }
     
     @IBAction func camera(_ sender: Any) {
@@ -120,13 +109,14 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
             labels.append(label)
             self.view.addSubview(label)
         }
-        labels[1].text = "Left"
-        labels[5].text = "Right"
-        labels[8].text = "Sternal Notch"
-        labels[9].text = "Nipple"
+        labels[0].text = "Left"
+        labels[1].text = "Right"
+        labels[2].text = "Sternal Notch"
+        labels[3].text = "Nipple"
     }
     
     func setPoint(){
+        let initialRect = CGRect(x: 0, y: 0, width: 20, height: 20)
         for _ in 0..<numberOfPoint{
             let dotView = UIImageView(frame: initialRect)
             var panGestureRecognizer = UIPanGestureRecognizer()
@@ -139,16 +129,10 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
             self.view.addSubview(dotView)
             points.append(dotView)
         }
-        points[0].center = CGPoint(x: 232.0, y: 432.5)
-        points[1].center = CGPoint(x: 220.0, y:505.0)
-        points[2].center = CGPoint(x: 241.0, y: 541.5)
-        points[3].center = CGPoint(x: 291.0, y: 585.0)
-        points[4].center = CGPoint(x: 354.0, y: 562.0)
-        points[5].center = CGPoint(x: 394.5, y: 498.5)
-        points[6].center = CGPoint(x:399.0, y: 445.5)
-        points[7].center = CGPoint(x: 392.0, y: 383.5)
-        points[8].center = CGPoint(x: 393.5, y: 298.5)
-        points[9].center = CGPoint(x: 266.0, y: 490.5)
+        points[0].center = CGPoint(x: 220.0, y: 505.0)
+        points[1].center = CGPoint(x: 394.5, y: 498.5)
+        points[2].center = CGPoint(x: 393.5, y: 298.5)
+        points[3].center = CGPoint(x: 266.0, y: 490.5)
         
     }
     
@@ -157,9 +141,7 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
             return
         }
         self.imageView.image = nil
-        for index in 0..<numberOfPoint-2{
-            //drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
-        }
+        drawLines()
         for index in 0..<numberOfPoint{
             labels[index].center.x = points[index].center.x
             labels[index].center.y = points[index].center.y+20
@@ -168,18 +150,18 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     }
     
     
-    func drawLines(fromPoint:CGPoint, toPoint:CGPoint){
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        imageView.image?.draw(in: self.view.frame)
+    func drawLines(){
+        UIGraphicsBeginImageContext(imageView.frame.size)
+        imageView.image?.draw(in: imageView.frame)
         let context = UIGraphicsGetCurrentContext()
-        context?.move(to: fromPoint)
-        context?.addLine(to: toPoint)
-        
+        context?.move(to: points[2].center)
+        context?.addLine(to: points[3].center)
+
         context?.setBlendMode(CGBlendMode.normal)
         context?.setLineCap(CGLineCap.round)
         context?.setLineWidth(CGFloat(lineWidth))
         context?.setStrokeColor(lineColor.cgColor)
-        
+
         context?.strokePath()
         imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

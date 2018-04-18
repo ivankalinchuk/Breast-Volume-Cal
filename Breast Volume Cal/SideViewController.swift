@@ -16,24 +16,12 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
     @IBOutlet weak var nextScreen: UIButton!
     @IBOutlet weak var restart: UIButton!
     
-    
-    
-    var lastPoint = CGPoint.zero
-    var swiped = false
     var numberOfPoint = 7
     var lineWidth = 5
     var dotWidth = 10
-    var touchedIndex = 0
     var points = [UIImageView]()
     var lineColor = UIColor.white
-    let initialRect = CGRect(x: 0, y: 0, width: 20, height: 20)
     var panGestureRecognizer = UIPanGestureRecognizer()
-    var timer = 0
-    var startCurve = CGPoint()
-    var endCurve = CGPoint()
-    var curveRight = CGPoint()
-    var curveLeft = CGPoint()
-    var midCurve = CGPoint()
     var labels = [UILabel]()
     var photoReady = false
     
@@ -131,6 +119,7 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
     }
     
     func setPoint(){
+        let initialRect = CGRect(x: 0, y: 0, width: 20, height: 20)
         for _ in 0..<numberOfPoint{
             let dotView = UIImageView(frame: initialRect)
             var panGestureRecognizer = UIPanGestureRecognizer()
@@ -157,9 +146,10 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
             return
         }
         self.imageView.image = nil
-        for index in 0..<numberOfPoint-2{
-            //drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
-        }
+        drawLines()
+//        for index in 0..<numberOfPoint-2{
+//            drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
+//        }
         for index in 0..<numberOfPoint{
             labels[index].center.x = points[index].center.x
             labels[index].center.y = points[index].center.y+20
@@ -168,18 +158,21 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
     }
     
     
-    func drawLines(fromPoint:CGPoint, toPoint:CGPoint){
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        imageView.image?.draw(in: self.view.frame)
+    func drawLines(){
+        UIGraphicsBeginImageContext(imageView.frame.size)
+        imageView.image?.draw(in: imageView.frame)
         let context = UIGraphicsGetCurrentContext()
-        context?.move(to: fromPoint)
-        context?.addLine(to: toPoint)
+        context?.move(to: points[0].center)
+        for index in 1..<numberOfPoint-1{
+            context?.addLine(to: points[index].center)
+        }
         
+
         context?.setBlendMode(CGBlendMode.normal)
         context?.setLineCap(CGLineCap.round)
         context?.setLineWidth(CGFloat(lineWidth))
         context?.setStrokeColor(lineColor.cgColor)
-        
+
         context?.strokePath()
         imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
