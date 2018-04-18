@@ -36,6 +36,7 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         calculateButton.isEnabled = false
         setTimer()
         setLabel()
+        self.view.bringSubview(toFront: imageView)
         // Do any additional setup after loading the view.
         
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
@@ -46,9 +47,8 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         
         
         //Geometric Method Calaulation
-        let eclipse = 4/6 * Double.pi * eclipseA * eclipseB * eclipseC;
-        let cone = 1/6 * Double.pi * eclipseA * eclipseB * coneHeight;
-        geometric = eclipse + cone;
+        geometric = calculator.geometricCalculation();
+        
         
         //Breast-V Method Calculation
         sternalNotch = points[8].center
@@ -116,6 +116,7 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
             label.center = CGPoint(x: 0, y:0)
             label.textAlignment = NSTextAlignment.center
             label.text = ""
+            label.textColor = lineColor
             labels.append(label)
             self.view.addSubview(label)
         }
@@ -138,16 +139,17 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
             self.view.addSubview(dotView)
             points.append(dotView)
         }
-        points[0].center = CGPoint(x:(3/8)*imageView.frame.maxX, y:(1/4)*imageView.frame.maxY)
-        points[1].center = CGPoint(x:(1/4)*imageView.frame.maxX, y:(7/16)*imageView.frame.maxY)
-        points[2].center = CGPoint(x:(1/4)*imageView.frame.maxX, y:(9/16)*imageView.frame.maxY)
-        points[3].center = CGPoint(x:(3/8)*imageView.frame.maxX, y:(3/4)*imageView.frame.maxY)
-        points[4].center = CGPoint(x:(5/8)*imageView.frame.maxX, y:(3/4)*imageView.frame.maxY)
-        points[5].center = CGPoint(x:(3/4)*imageView.frame.maxX, y:(9/16)*imageView.frame.maxY)
-        points[6].center = CGPoint(x:(3/4)*imageView.frame.maxX, y:(7/16)*imageView.frame.maxY)
-        points[7].center = CGPoint(x:(5/8)*imageView.frame.maxX, y:(1/4)*imageView.frame.maxY)
-        points[8].center = CGPoint(x:(1/2)*imageView.frame.maxX, y:(1/8)*imageView.frame.maxY)
-        points[9].center = CGPoint(x:(1/3)*imageView.frame.maxX, y:(1/2)*imageView.frame.maxY)
+        points[0].center = CGPoint(x: 232.0, y: 432.5)
+        points[1].center = CGPoint(x: 220.0, y:505.0)
+        points[2].center = CGPoint(x: 241.0, y: 541.5)
+        points[3].center = CGPoint(x: 291.0, y: 585.0)
+        points[4].center = CGPoint(x: 354.0, y: 562.0)
+        points[5].center = CGPoint(x: 394.5, y: 498.5)
+        points[6].center = CGPoint(x:399.0, y: 445.5)
+        points[7].center = CGPoint(x: 392.0, y: 383.5)
+        points[8].center = CGPoint(x: 393.5, y: 298.5)
+        points[9].center = CGPoint(x: 266.0, y: 490.5)
+        
     }
     
     @objc func update(){
@@ -156,16 +158,13 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         }
         self.imageView.image = nil
         for index in 0..<numberOfPoint-2{
-            drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
+            //drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
         }
-        labels[1].center.x = points[1].center.x
-        labels[1].center.y = points[1].center.y+20
-        labels[5].center.x = points[5].center.x
-        labels[5].center.y = points[5].center.y+20
-        labels[8].center.x = points[8].center.x
-        labels[8].center.y = points[8].center.y+20
-        labels[9].center.x = points[9].center.x
-        labels[9].center.y = points[9].center.y+20
+        for index in 0..<numberOfPoint{
+            labels[index].center.x = points[index].center.x
+            labels[index].center.y = points[index].center.y+20
+        //print(labels[index].text!,points[index].center.x,points[index].center.y,separator: "  ")
+        }
     }
     
     

@@ -24,6 +24,14 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pictureView: UIImageView!
     
+    @IBAction func Library(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        image.allowsEditing = false
+        self.present(image , animated: true)
+    }
     @IBAction func camera(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
@@ -56,6 +64,7 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
         super.viewDidLoad()
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
         setTimer()
+        self.view.bringSubview(toFront: imageView)
         // Do any additional setup after loading the view.
         
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
@@ -88,6 +97,7 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
         if (!photoReady){
             return
         }
+        points[1].center.x = points[0].center.x
         self.imageView.image = nil
         drawLines(fromPoint: points[0].center, toPoint: points[1].center)
     }
@@ -116,7 +126,7 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
         case .began: fallthrough
         case .changed:
             let translation = recognizer.translation(in: self.view)
-            view.center = CGPoint(x:view.center.x, y: view.center.y + translation.y)
+            view.center = CGPoint(x:view.center.x + translation.x, y: view.center.y + translation.y)
             recognizer.setTranslation(CGPoint.zero, in: self.view)
             update()
         case.ended: break
@@ -131,9 +141,9 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
      
      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
      //calibrating
-     let calibratingLength =  Double(points[1].center.y - points[0].center.y)
+     let calibratingLength =  abs(Double(points[1].center.y - points[0].center.y))
         print(calibratingLength)
-     scaler = 1/calibratingLength
+     scaler = 10/calibratingLength
      
      // alert show
      self.present(alert, animated: true)

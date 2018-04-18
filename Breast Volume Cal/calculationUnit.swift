@@ -52,11 +52,13 @@ class CalculationUnit{
         eclipseC = dis(a: midCurve, b: midPoint(start: startCurve, end: endCurve));
     }
     
-    func geometricCalculation()->(Double){
+    func geometricCalculation()->(Int){
         let eclipse = 4/6 * Double.pi * eclipseA * eclipseB * eclipseC;
         let cone = 1/6 * Double.pi * eclipseA * eclipseB * coneHeight;
-        let result = eclipse + cone;
-        return result;
+        let result = eclipse * 1.5 + cone;
+        print("Eclipse : " + String(eclipse));
+        print("Cone : " + String(cone));
+        return Int(result);
     }
 
     

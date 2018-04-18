@@ -43,6 +43,7 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         nextScreen.isEnabled = false
         setTimer()
         setLabel()
+        self.view.bringSubview(toFront: imageView)
         // Do any additional setup after loading the view.
         
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
@@ -101,6 +102,7 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         calculator.calculateConeHeight(topSide: points[0].center, startCurve: points[1].center)
         calculator.calculateEclipseA(startCurve: points[1].center, endCurve: points[5].center)
         calculator.calculateEclipseC(midCurve: points[3].center, startCurve: points[1].center, endCurve: points[5].center)
+        print("Calbrate Test Result : " + String(eclipseA))
     }
     
     func setTimer(){
@@ -115,6 +117,7 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
             label.center = CGPoint(x: 0, y:0)
             label.textAlignment = NSTextAlignment.center
             label.text = ""
+            label.textColor = lineColor
             labels.append(label)
             self.view.addSubview(label)
         }
@@ -155,7 +158,7 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         }
         self.imageView.image = nil
         for index in 0..<numberOfPoint-2{
-            drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
+            //drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
         }
         for index in 0..<numberOfPoint{
             labels[index].center.x = points[index].center.x

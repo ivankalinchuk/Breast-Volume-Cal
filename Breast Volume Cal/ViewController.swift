@@ -17,7 +17,7 @@ var ff = 0.0;
 var fn = 0.0;
 
     //for geometric method
-var geometric = 0.0;
+var geometric = 0;
 var coneHeight = 0.0;
 var eclipseA = 0.0;
 var eclipseB = 0.0;
