@@ -97,8 +97,8 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Extend the line to fit 10 cm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSL-0c-nYo">
-                                <rect key="frame" x="224" y="909" width="321" height="57"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Extend the line to fit 30 cm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSL-0c-nYo">
+                                <rect key="frame" x="223" y="909" width="323" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,15 +162,6 @@
                                     <action selector="camera:" destination="lXL-vp-WRi" eventType="touchUpInside" id="dXa-eC-UPo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkF-Lb-c2W">
-                                <rect key="frame" x="602" y="41" width="146" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Calculate!" image="button_calculate.png"/>
-                                <connections>
-                                    <action selector="Calculate:" destination="lXL-vp-WRi" eventType="touchUpInside" id="tt8-yK-G0g"/>
-                                    <segue destination="Y5F-Vu-ggM" kind="show" id="Ir3-ja-YVf"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PcG-p6-zDb">
                                 <rect key="frame" x="84" y="112" width="600" height="800"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -195,6 +186,15 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkF-Lb-c2W">
+                                <rect key="frame" x="609" y="41" width="139" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Calculate!" image="button_calculate.png"/>
+                                <connections>
+                                    <action selector="Calculate:" destination="lXL-vp-WRi" eventType="touchUpInside" id="tt8-yK-G0g"/>
+                                    <segue destination="Y5F-Vu-ggM" kind="show" id="Ir3-ja-YVf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.86788368739999999" blue="0.88420304429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="tFO-Bq-x31"/>
@@ -285,7 +285,7 @@
                                 <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIm-YQ-lJR">
-                                <rect key="frame" x="20" y="40" width="125" height="40"/>
+                                <rect key="frame" x="20" y="40" width="121" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Restart" image="button_restart.png"/>
                                 <connections>
@@ -368,6 +368,6 @@
         <image name="logo2.png" width="869" height="652"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mhK-HX-HYf"/>
+        <segue reference="GwH-Br-vQK"/>
     </inferredMetricsTieBreakers>
 </document>

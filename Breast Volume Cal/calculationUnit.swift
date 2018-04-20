@@ -59,10 +59,10 @@ class CalculationUnit{
         print("Cone Height: " + String(coneHeight));
         let eclipse = 4/6 * Double.pi * eclipseA * eclipseB * eclipseC;
         let cone = 1/6 * Double.pi * eclipseA * eclipseB * coneHeight;
-        let result = eclipse * 1.5 + cone;
+        let result = eclipse + cone;
         print("Eclipse : " + String(eclipse));
         print("Cone : " + String(cone));
-        return Int(result);
+        return Int(result/4.25);
     }
 
     
