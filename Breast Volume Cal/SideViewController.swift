@@ -84,11 +84,10 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
     @IBAction func next(_ sender: UIButton) {
         let calculator = CalculationUnit();
         
-        calculator.calculateFF(startCurve: points[1].center, curveLeft: points[2].center, midCurve: points[3].center, curveRight: points[4].center, endCurve: points[5].center)
-        calculator.calculateFN(startCurve: points[1].center, curveLeft: points[2].center, midCurve: points[3].center, curveRight: points[4].center, nipple: points[6].center)
+        calculator.calculateFNFF(startCurve: points[1].center, curveLeft: points[2].center, midCurve: points[3].center, curveRight: points[4].center, nipple: points[5].center, endCurve: points[6].center)
         
         calculator.calculateConeHeight(topSide: points[0].center, startCurve: points[1].center)
-        calculator.calculateEclipseA(startCurve: points[1].center, endCurve: points[5].center)
+        calculator.calculateEclipseA(startCurve: points[1].center, endCurve: points[6].center)
         calculator.calculateEclipseC(midCurve: points[3].center, startCurve: points[1].center, endCurve: points[5].center)
         print("Calbrate Test Result : " + String(eclipseA))
     }
@@ -114,8 +113,8 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         labels[2].text = "CurveLeft"
         labels[3].text = "MidCurve"
         labels[4].text = "CurveRight"
-        labels[5].text = "EndCurve"
-        labels[6].text = "Nipple"
+        labels[5].text = "Nipple"
+        labels[6].text = "EndCurve"
     }
     
     func setPoint(){
@@ -147,9 +146,6 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         }
         self.imageView.image = nil
         drawLines()
-//        for index in 0..<numberOfPoint-2{
-//            drawLines(fromPoint: points[index].center, toPoint: points[index+1].center)
-//        }
         for index in 0..<numberOfPoint{
             labels[index].center.x = points[index].center.x
             labels[index].center.y = points[index].center.y+20
@@ -163,7 +159,7 @@ class SideViewController: UIViewController,UINavigationControllerDelegate,UIImag
         imageView.image?.draw(in: imageView.frame)
         let context = UIGraphicsGetCurrentContext()
         context?.move(to: points[0].center)
-        for index in 1..<numberOfPoint-1{
+        for index in 1..<numberOfPoint{
             context?.addLine(to: points[index].center)
         }
         

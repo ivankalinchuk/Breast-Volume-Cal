@@ -31,6 +31,13 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
         image.allowsEditing = false
         self.present(image , animated: true)
+        
+        readyToCalibrate = true;
+        
+        if(!photoReady){
+            setPoint()
+        }
+        photoReady = true
     }
     @IBAction func camera(_ sender: Any) {
         let image = UIImagePickerController()
@@ -143,7 +150,7 @@ class CalibrateController: UIViewController,UIImagePickerControllerDelegate,UINa
      //calibrating
      let calibratingLength =  abs(Double(points[1].center.y - points[0].center.y))
         print(calibratingLength)
-     scaler = 10/calibratingLength
+     scaler = 30/calibratingLength
      
      // alert show
      self.present(alert, animated: true)

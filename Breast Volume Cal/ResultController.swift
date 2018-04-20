@@ -26,8 +26,8 @@ UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let calculator = CalculationUnit()
-        breastvLabel.text!.append(String(breastV))
-        geometricLabel.text!.append(String(calculator.geometricCalculation()))
+        breastvLabel.text!.append(String(breastV) + " cc")
+        geometricLabel.text!.append(String(calculator.geometricCalculation()) + " cc")
         // Do any additional setup after loading the view.
         
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)

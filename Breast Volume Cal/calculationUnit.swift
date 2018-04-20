@@ -53,6 +53,10 @@ class CalculationUnit{
     }
     
     func geometricCalculation()->(Int){
+        print("Eclipse A : " + String(eclipseA));
+        print("Eclipse B : " + String(eclipseB));
+        print("Eclipse C : " + String(eclipseC));
+        print("Cone Height: " + String(coneHeight));
         let eclipse = 4/6 * Double.pi * eclipseA * eclipseB * eclipseC;
         let cone = 1/6 * Double.pi * eclipseA * eclipseB * coneHeight;
         let result = eclipse * 1.5 + cone;
@@ -62,22 +66,14 @@ class CalculationUnit{
     }
 
     
-    //Calculate arc distant from fold to nipple
-    func calculateFN(startCurve : CGPoint, curveLeft : CGPoint, midCurve : CGPoint, curveRight : CGPoint, nipple :CGPoint){
+    //Calculate arc distant from fold to nipple & arc distant from fold to fold
+    func calculateFNFF(startCurve : CGPoint, curveLeft : CGPoint, midCurve : CGPoint, curveRight : CGPoint, nipple :CGPoint, endCurve :CGPoint){
         fn = 0.0
         fn += dis(a : startCurve,b : curveLeft)
         fn += dis(a : curveLeft,b : midCurve)
         fn += dis(a : midCurve,b : curveRight)
         fn += dis(a : curveRight,b : nipple)
-    }
-    
-    //Calculate arc distant from fold to fold
-    func calculateFF(startCurve : CGPoint, curveLeft : CGPoint, midCurve : CGPoint, curveRight : CGPoint, endCurve :CGPoint){
-        ff = 0.0
-        ff += dis(a : startCurve,b : curveLeft)
-        ff += dis(a : curveLeft,b : midCurve)
-        ff += dis(a : midCurve,b : curveRight)
-        ff += dis(a : curveRight,b : endCurve)
+        ff = fn + dis(a: nipple, b: endCurve)
     }
     
     func calculateSN(sternalNotch :CGPoint, nippleFront :CGPoint){
@@ -86,6 +82,6 @@ class CalculationUnit{
     
     //Calculate breast volume according to breastV method
     func calBreastV(){
-        breastV =  -231.66 + 0.5747*sn*sn + 18.5478*ff + 14.5087*fn
+        breastV =  Int(-231.66 + 0.75*0.5747*sn*sn + 18.5478*ff + 14.5087*fn + (eclipseB-11)*50)
     }
 }

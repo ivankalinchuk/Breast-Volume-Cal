@@ -42,10 +42,10 @@ class FrontViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         geometric = calculator.geometricCalculation();
         
         //Breast-V Method Calculation
+        calculator.calculateEclipseB(left: points[0].center, right: points[1].center)
         calculator.calculateSN(sternalNotch: points[2].center, nippleFront: points[3].center)
         calculator.calBreastV()
-        
-        calculator.calculateEclipseB(left: points[0].center, right: points[1].center)
+        //print("Breast width : " + String(calculator.dis(a: points[0].center, b: points[1].center)))
     }
     
     @IBAction func camera(_ sender: Any) {
